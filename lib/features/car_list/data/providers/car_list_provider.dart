@@ -1,21 +1,17 @@
-import 'package:cars_app/core/const/http_consts.dart';
-import 'package:cars_app/core/utils/json_to_type_converter.dart';
+import 'package:cars_app/core/providers/car_app_provider.dart';
 import 'package:cars_app/features/car_list/data/dto/car_dto.dart';
 import 'package:chopper/chopper.dart';
+import 'package:injecteo/injecteo.dart';
+import 'package:mocktail/mocktail.dart';
 
 part 'car_list_provider.chopper.dart';
 
+@LazySingleton(env: <String>[Environment.dev])
 @ChopperApi()
 abstract class CarListProvider extends ChopperService {
-  static CarListProvider create() {
-    final ChopperClient client = ChopperClient(
-      baseUrl: Uri.parse(HttpConsts.BASE_URL),
-      services: <ChopperService>[
-        _$CarListProvider(),
-      ],
-      converter: const JsonToTypeConverter(),
-    );
-    return _$CarListProvider(client);
+  @factoryMethod
+  static CarListProvider create(CarAppProvider provider) {
+    return _$CarListProvider(provider.client);
   }
 
   @Get(
@@ -26,3 +22,9 @@ abstract class CarListProvider extends ChopperService {
   )
   Future<Response<List<CarDTO>>> getCars();
 }
+
+@LazySingleton(
+  as: CarListProvider,
+  env: <String>[Environment.test],
+)
+class CarListProviderMock extends Mock implements CarListProvider {}

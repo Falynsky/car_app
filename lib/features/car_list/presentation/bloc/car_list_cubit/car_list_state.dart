@@ -5,15 +5,15 @@ part 'car_list_state.freezed.dart';
 
 @freezed
 class CarListState with _$CarListState {
-  const factory CarListState({
-    required List<CarModel> cars,
-    required bool isLoading,
-  }) = _CarListState;
+  const factory CarListState.loading() = _Loading;
 
-  factory CarListState.empty() {
-    return const CarListState(
-      cars: <CarModel>[],
-      isLoading: true,
-    );
-  }
+  const factory CarListState.success({
+    required List<CarModel> cars,
+  }) = _Success;
+
+  const factory CarListState.failure({
+    required String message,
+  }) = _Failure;
+
+  const factory CarListState.empty() = _Empty;
 }

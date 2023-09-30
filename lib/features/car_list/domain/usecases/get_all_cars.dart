@@ -3,7 +3,10 @@ import 'package:cars_app/core/usecases/usecase.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/domain/repositories/cars_repository.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injecteo/injecteo.dart';
+import 'package:mocktail/mocktail.dart';
 
+@LazySingleton(env: [Environment.dev])
 class GetAllCarsUseCase implements UseCase<List<CarModel>, NoParams> {
   final CarsRepository repository;
 
@@ -14,3 +17,6 @@ class GetAllCarsUseCase implements UseCase<List<CarModel>, NoParams> {
     return repository.getAllCars();
   }
 }
+
+@LazySingleton(as: GetAllCarsUseCase, env: [Environment.test])
+class GetAllCarsUseCaseMock extends Mock implements GetAllCarsUseCase {}

@@ -3,7 +3,9 @@ import 'dart:convert';
 
 import 'package:cars_app/core/utils/json_type_parser.dart';
 import 'package:chopper/chopper.dart';
+import 'package:injecteo/injecteo.dart';
 
+@lazySingleton
 class JsonToTypeConverter extends JsonConverter {
   const JsonToTypeConverter();
 
