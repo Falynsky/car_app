@@ -1,13 +1,10 @@
+import 'package:cars_app/features/car_list/presentation/pages/car_list_page.dart';
+import 'package:cars_app/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 
-void main() {
-  // final CarListService carListService = CarListService.create();
-  // final Future<Response<List<CarModel>>> cars = carListService.getCars();
-  // cars.then((Response<List<CarModel>> value) {
-  //   final List<CarModel> body = value.body ?? <CarModel>[];
-  //   final CarModel carModel = body.first;
-  //   print(carModel);
-  // });
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -23,7 +20,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Text('Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Cars App'),
+        ),
+        body: const CarListPage(),
+      ),
     );
   }
 }

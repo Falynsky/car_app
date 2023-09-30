@@ -1,5 +1,5 @@
 import 'package:cars_app/features/car_list/domain/entities/car_entity.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'car_model.g.dart';
 

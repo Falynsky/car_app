@@ -13,7 +13,7 @@ abstract class CarListService extends ChopperService {
       services: <ChopperService>[
         _$CarListService(),
       ],
-      converter: const JsonToTypeConverter(<Type, Function>{CarModel: CarModel.fromJson}),
+      converter: const JsonToTypeConverter(),
     );
     return _$CarListService(client);
   }
