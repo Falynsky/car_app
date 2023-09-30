@@ -1,0 +1,10 @@
+//easy_localization
+
+fvm flutter pub run easy_localization:generate -S "assets/translations" -O "lib/translations"
+fvm flutter pub run easy_localization:generate -S "assets/translations" -O "lib/translations" -o "locale_keys.g.dart" -f keys
+
+//erros with build_runner
+
+fvm flutter pub get
+fvm fluter packager pub get
+fvm flutter pub run build_runner watch --delete-conflicting-outputs

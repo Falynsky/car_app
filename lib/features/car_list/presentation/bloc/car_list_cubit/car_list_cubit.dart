@@ -19,8 +19,12 @@ class CarListCubit extends Cubit<CarListState> {
     emit(const CarListState.loading());
     final Either<Failure, List<CarModel>> either = await getAllCarsUseCase(NoParams());
     either.fold(
-      (Failure failure) => emit(const CarListState.failure(message: 'Błąd pobierania danych')),
-      (List<CarModel> cars) => emit(CarListState.success(cars: cars)),
+      (Failure failure) {
+        return emit(CarListState.failure(message: failure.message));
+      },
+      (List<CarModel> cars) {
+        return emit(CarListState.success(cars: cars));
+      },
     );
   }
 }

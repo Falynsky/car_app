@@ -1,3 +1,5 @@
+import 'package:cars_app/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarListCard extends StatelessWidget {
@@ -29,12 +31,14 @@ class CarListCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Brand: $brand'),
-                  Text('Model: $model'),
-                  Text('Color: $color'),
-                  Text(
-                    'Registration: $registration',
+                  const Text(LocaleKeys.car_brand).tr(args: <String>[brand]),
+                  const Text(LocaleKeys.car_model).tr(args: <String>[model]),
+                  const Text(LocaleKeys.car_color).tr(args: <String>[color]),
+                  const Text(
+                    LocaleKeys.car_registration,
                     overflow: TextOverflow.ellipsis,
+                  ).tr(
+                    args: <String>[registration],
                   ),
                 ],
               ),

@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injecteo/injecteo.dart';
 import 'package:mocktail/mocktail.dart';
 
-@LazySingleton(env: [Environment.dev])
+@LazySingleton(env: <String>[Environment.dev])
 class GetAllCarsUseCase implements UseCase<List<CarModel>, NoParams> {
   final CarsRepository repository;
 
@@ -18,5 +18,5 @@ class GetAllCarsUseCase implements UseCase<List<CarModel>, NoParams> {
   }
 }
 
-@LazySingleton(as: GetAllCarsUseCase, env: [Environment.test])
+@LazySingleton(as: GetAllCarsUseCase, env: <String>[Environment.test])
 class GetAllCarsUseCaseMock extends Mock implements GetAllCarsUseCase {}

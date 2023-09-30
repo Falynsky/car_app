@@ -26,7 +26,7 @@ class RemoteCarsRepository implements CarsRepository {
       final List<CarModel> list = body.map(mapper.toModel).toList();
       return Right<Failure, List<CarModel>>(list);
     } on Exception {
-      return Left<Failure, List<CarModel>>(ServerFailure());
+      return const Left<Failure, List<CarModel>>(ServerFailure('Błąd pobierania danych'));
     }
   }
 }

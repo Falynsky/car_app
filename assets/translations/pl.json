@@ -1,0 +1,7 @@
+{
+  "car_list_title":"Lista samochodów",
+  "car_brand": "Marka: {}",
+  "car_model": "Model: {}",
+  "car_color": "Kolor: {}",
+  "car_registration": "Nr. Rejestracji: {}"
+}
