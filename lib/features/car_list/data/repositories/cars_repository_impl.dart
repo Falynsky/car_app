@@ -17,17 +17,15 @@ class CarsRepositoryImpl implements CarsRepository {
 
   @override
   Future<Either<Failure, List<CarEntity>>> getAllCars() async {
-    return await _getAllCars(() {
-      return carListService.getCars();
-    });
+    return _getTrivia(carListService.getCars);
   }
 
-  Future<Either<Failure, List<CarEntity>>> _getAllCars(
-    _ConcreteOrRandomChooser getAllCars,
+  Future<Either<Failure, List<CarEntity>>> _getTrivia(
+    _ConcreteOrRandomChooser getConcreteOrRandom,
   ) async {
     try {
-      final cars = await getAllCars;
-      final List<CarEntity> body = cars.body ?? <CarEntity>[];
+      final Response<List<CarModel>> remoteTrivia = await getConcreteOrRandom();
+      final List<CarModel> body = remoteTrivia.body ?? <CarModel>[];
       return Right<Failure, List<CarEntity>>(body);
     } on Exception {
       return Left<Failure, List<CarEntity>>(ServerFailure());

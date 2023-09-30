@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  // final CarListService carListService = CarListService.create();
+  // final Future<Response<List<CarModel>>> cars = carListService.getCars();
+  // cars.then((Response<List<CarModel>> value) {
+  //   final List<CarModel> body = value.body ?? <CarModel>[];
+  //   final CarModel carModel = body.first;
+  //   print(carModel);
+  // });
   runApp(const MyApp());
 }
 

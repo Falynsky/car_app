@@ -17,13 +17,17 @@ class _$CarListService extends CarListService {
   final definitionType = CarListService;
 
   @override
-  Future<Response<CarModel>> getCars() {
+  Future<Response<List<CarModel>>> getCars() {
     final Uri $url = Uri.parse('/car-list');
+    final Map<String, String> $headers = {
+      'x-apikey': '795ad45e4dc222bc0e5bd1c163bb885e3635e',
+    };
     final Request $request = Request(
       'GET',
       $url,
       client.baseUrl,
+      headers: $headers,
     );
-    return client.send<CarModel, CarModel>($request);
+    return client.send<List<CarModel>, CarModel>($request);
   }
 }

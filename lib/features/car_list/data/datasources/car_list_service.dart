@@ -1,3 +1,5 @@
+import 'package:cars_app/core/const/http_consts.dart';
+import 'package:cars_app/core/utils/json_to_type_converter.dart';
 import 'package:cars_app/features/car_list/data/models/car_model.dart';
 import 'package:chopper/chopper.dart';
 
@@ -5,15 +7,13 @@ part 'car_list_service.chopper.dart';
 
 @ChopperApi()
 abstract class CarListService extends ChopperService {
-  static const String _baseUrl = 'https://iteorecruitment-591c.restdb.io/rest';
-
   static CarListService create() {
     final ChopperClient client = ChopperClient(
-      baseUrl: Uri(path: _baseUrl),
+      baseUrl: Uri.parse(HttpConsts.BASE_URL),
       services: <ChopperService>[
         _$CarListService(),
       ],
-      converter: const JsonConverter(),
+      converter: const JsonToTypeConverter(<Type, Function>{CarModel: CarModel.fromJson}),
     );
     return _$CarListService(client);
   }
