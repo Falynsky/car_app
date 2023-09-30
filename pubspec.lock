@@ -339,6 +339,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  injecteo:
+    dependency: "direct main"
+    description:
+      name: injecteo
+      sha256: dc84b523eabadaab1572e0fa4a2ce7e7848cb03deb2d3d19cb47015bf811ae25
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
+  injecteo_generator:
+    dependency: "direct dev"
+    description:
+      name: injecteo_generator
+      sha256: ddc7ea68925235c77802ba86946eb48d9e74c8239446da8ed30f8aac2f7e828a
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
+  injecteo_models:
+    dependency: transitive
+    description:
+      name: injecteo_models
+      sha256: e03714dd027bb637f243364ba70bdc835bfabddabe7f159ca52b15481c482d27
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   io:
     dependency: transitive
     description:

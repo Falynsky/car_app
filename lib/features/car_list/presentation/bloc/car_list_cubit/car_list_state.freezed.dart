@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CarListState {
-  List<CarEntity> get cars => throw _privateConstructorUsedError;
+  List<CarModel> get cars => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $CarListStateCopyWith<$Res> {
           CarListState value, $Res Function(CarListState) then) =
       _$CarListStateCopyWithImpl<$Res, CarListState>;
   @useResult
-  $Res call({List<CarEntity> cars, bool isLoading});
+  $Res call({List<CarModel> cars, bool isLoading});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$CarListStateCopyWithImpl<$Res, $Val extends CarListState>
       cars: null == cars
           ? _value.cars
           : cars // ignore: cast_nullable_to_non_nullable
-              as List<CarEntity>,
+              as List<CarModel>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -70,7 +70,7 @@ abstract class _$$_CarListStateCopyWith<$Res>
       __$$_CarListStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<CarEntity> cars, bool isLoading});
+  $Res call({List<CarModel> cars, bool isLoading});
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class __$$_CarListStateCopyWithImpl<$Res>
       cars: null == cars
           ? _value._cars
           : cars // ignore: cast_nullable_to_non_nullable
-              as List<CarEntity>,
+              as List<CarModel>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -104,12 +104,12 @@ class __$$_CarListStateCopyWithImpl<$Res>
 
 class _$_CarListState implements _CarListState {
   const _$_CarListState(
-      {required final List<CarEntity> cars, required this.isLoading})
+      {required final List<CarModel> cars, required this.isLoading})
       : _cars = cars;
 
-  final List<CarEntity> _cars;
+  final List<CarModel> _cars;
   @override
-  List<CarEntity> get cars {
+  List<CarModel> get cars {
     if (_cars is EqualUnmodifiableListView) return _cars;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_cars);
@@ -146,11 +146,11 @@ class _$_CarListState implements _CarListState {
 
 abstract class _CarListState implements CarListState {
   const factory _CarListState(
-      {required final List<CarEntity> cars,
+      {required final List<CarModel> cars,
       required final bool isLoading}) = _$_CarListState;
 
   @override
-  List<CarEntity> get cars;
+  List<CarModel> get cars;
   @override
   bool get isLoading;
   @override
