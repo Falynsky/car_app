@@ -1,7 +1,6 @@
 import 'package:cars_app/features/car_details/presentation/pages/car_details_page.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/presentation/widgets/car_list/car_card/car_card_info_frame.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarCard extends StatelessWidget {
@@ -22,17 +21,11 @@ class CarCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.of(context)
-              .push(
+          Navigator.of(context).push(
             PageRouteBuilder<Locale>(
               pageBuilder: (BuildContext context, _, __) => CarDetailsPage(car: car),
             ),
-          )
-              .then((Locale? locale) {
-            if (locale != null) {
-              context.setLocale(locale);
-            }
-          });
+          );
         },
         child: Padding(
           padding: const EdgeInsets.all(10),

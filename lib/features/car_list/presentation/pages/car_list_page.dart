@@ -1,9 +1,9 @@
 import 'package:cars_app/core/di/dependencies.dart';
+import 'package:cars_app/core/widgets/loading_spinner.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_cubit.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_state.dart';
 import 'package:cars_app/features/car_list/presentation/widgets/car_list/car_list_frame.dart';
-import 'package:cars_app/features/car_list/presentation/widgets/loading_spinner.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +17,11 @@ class CarListPage extends StatelessWidget {
     final CarListCubit carListCubit = getIt<CarListCubit>();
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.amber,
         actions: <Widget>[
           IconButton(
-            padding: const EdgeInsets.only(right: 10),
             icon: const Icon(Icons.language_rounded),
-            iconSize: 30, // Set the icon for the action widget
+            iconSize: 30,
             onPressed: () {
               context.setLocale(
                 context.locale == const Locale('pl') ? const Locale('en') : const Locale('pl'),
@@ -79,7 +79,30 @@ class CarListPage extends StatelessWidget {
     return state.maybeWhen(
       orElse: CarListFrame.new,
       loading: () => const LoadingSpinner(),
-      success: (List<CarModel> cars) => CarListFrame(cars: cars),
+      success: (List<CarModel> cars) => CarListFrame(cars: [
+        const CarModel(
+          id: '1',
+          brand: 'Ford',
+          model: 'Focus',
+          year: '2011-01-01T00:00:00.000Z',
+          registration: 'SD97XXXX',
+          color: '#0c226b',
+          ownerId: '1',
+          lat: 50.329095,
+          lng: 19.226502,
+        ),
+        const CarModel(
+          id: '2',
+          brand: 'Kia',
+          model: 'CEED',
+          year: '2023-01-01T00:00:00.000Z',
+          registration: 'SD0429L',
+          color: '#e04102',
+          ownerId: '2',
+          lat: 50.329109,
+          lng: 19.226600,
+        )
+      ]),
     );
   }
 }

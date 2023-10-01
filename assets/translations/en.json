@@ -1,10 +1,14 @@
 {
   "car_list_title": "Cars",
   "car_brand": "Brand: {}",
-  "car_model": "Model:",
+  "car_model": "Model: {}",
   "car_color": "Paint",
   "car_registration": "Registration: {}",
   "car_list_error": "Error while loading car list",
   "car_list_empty": "No cars found",
-  "car_details_title": "Car details"
+  "car_details_title": "Car details",
+  "car_localization": "Car localization",
+  "car_basic_data": "Basic data",
+  "car_details_data": "Details data",
+  "car_year": "Year of production: {}"
 }

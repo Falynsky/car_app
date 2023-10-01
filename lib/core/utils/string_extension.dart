@@ -10,4 +10,6 @@ extension StringExtension on String {
     final int parsedColorValue = int.parse(cleanedColor, radix: 16);
     return Color(parsedColorValue + 0xFF000000);
   }
+
+  DateTime get parseToDate => DateTime.parse(this);
 }

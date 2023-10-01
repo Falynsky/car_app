@@ -32,8 +32,7 @@ class CarCardMainInfoBox extends StatelessWidget {
                 LocaleKeys.car_model,
                 style: textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w500),
                 overflow: TextOverflow.ellipsis,
-              ).tr(),
-              const SizedBox(width: 4),
+              ).tr(args: <String>['']),
               Text(
                 model,
                 style: textTheme.bodyLarge,

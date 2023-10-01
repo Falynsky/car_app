@@ -15,42 +15,40 @@ class CarLocalizationBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 200,
-            width: 300,
-            child: FlutterMap(
-              options: MapOptions(
-                interactiveFlags: InteractiveFlag.none,
-                center: LatLng(lat, lng),
-                zoom: 12,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        child: SizedBox(
+          height: 250,
+          child: FlutterMap(
+            options: MapOptions(
+              interactiveFlags: InteractiveFlag.none,
+              center: LatLng(lat, lng),
+              zoom: 16,
+            ),
+            children: <Widget>[
+              TileLayer(
+                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                userAgentPackageName: 'com.example.app',
               ),
-              children: <Widget>[
-                TileLayer(
-                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  userAgentPackageName: 'com.example.app',
-                ),
-                MarkerLayer(
-                  markers: <Marker>[
-                    Marker(
-                      point: LatLng(lat, lng),
-                      width: 80,
-                      height: 80,
-                      builder: (BuildContext context) => Container(
-                        child: const Icon(
-                          Icons.location_pin,
-                          size: 35,
-                          color: Colors.pink,
-                        ),
+              MarkerLayer(
+                markers: <Marker>[
+                  Marker(
+                    point: LatLng(lat, lng),
+                    width: 80,
+                    height: 80,
+                    builder: (BuildContext context) => Container(
+                      child: const Icon(
+                        Icons.location_pin,
+                        size: 35,
+                        color: Colors.pink,
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

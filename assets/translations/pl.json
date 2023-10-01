@@ -1,10 +1,14 @@
 {
   "car_list_title": "Samochody",
   "car_brand": "Marka: {}",
-  "car_model": "Model:",
+  "car_model": "Model: {}",
   "car_color": "Lakier",
   "car_registration": "Rejestracja: {}",
   "car_list_error": "Nie można pobrać listy samochodów",
   "car_list_empty": "Brak samochodów",
-  "car_details_title": "Szczegóły pojazdu"
+  "car_details_title": "Szczegóły pojazdu",
+  "car_localization": "Lokalizacja pojazdu",
+  "car_basic_data": "Dane podstawowe",
+  "car_details_data": "Dane szczegółowe",
+  "car_year": "Rok produkcji: {}"
 }

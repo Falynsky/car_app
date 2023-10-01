@@ -9,5 +9,9 @@ abstract class  LocaleKeys {
   static const car_list_error = 'car_list_error';
   static const car_list_empty = 'car_list_empty';
   static const car_details_title = 'car_details_title';
+  static const car_localization = 'car_localization';
+  static const car_basic_data = 'car_basic_data';
+  static const car_details_data = 'car_details_data';
+  static const car_year = 'car_year';
 
 }
