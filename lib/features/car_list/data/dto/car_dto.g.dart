@@ -12,6 +12,10 @@ CarDTO _$CarDTOFromJson(Map<String, dynamic> json) => CarDTO(
       brand: json['brand'] as String,
       model: json['model'] as String,
       color: json['color'] as String,
+      year: json['year'] as String,
+      ownerId: json['ownerId'] as String,
+      lat: stringToDouble(json['lat']),
+      lng: stringToDouble(json['lng']),
     );
 
 Map<String, dynamic> _$CarDTOToJson(CarDTO instance) => <String, dynamic>{
@@ -20,4 +24,8 @@ Map<String, dynamic> _$CarDTOToJson(CarDTO instance) => <String, dynamic>{
       'brand': instance.brand,
       'model': instance.model,
       'color': instance.color,
+      'year': instance.year,
+      'ownerId': instance.ownerId,
+      'lat': instance.lat,
+      'lng': instance.lng,
     };

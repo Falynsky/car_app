@@ -3,7 +3,7 @@ import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/core/error/failures.dart';
 import 'package:cars_app/core/usecases/usecase.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
-import 'package:cars_app/features/car_list/domain/usecases/get_all_cars.dart';
+import 'package:cars_app/features/car_list/domain/usecases/get_all_cars_use_case.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_cubit.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_state.dart';
 import 'package:dartz/dartz.dart';
@@ -31,6 +31,10 @@ void main() async {
             brand: 'brand',
             model: 'model',
             color: 'color',
+            year: '2005-01-01T00:00:00.000Z',
+            ownerId: 'ownerId',
+            lat: 0,
+            lng: 0,
           ),
         ]),
       );
@@ -47,6 +51,10 @@ void main() async {
             brand: 'brand',
             model: 'model',
             color: 'color',
+            year: '2005-01-01T00:00:00.000Z',
+            ownerId: 'ownerId',
+            lat: 0,
+            lng: 0,
           ),
         ],
       ),

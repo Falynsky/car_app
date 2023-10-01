@@ -21,6 +21,10 @@ mixin _$CarModel {
   String get brand => throw _privateConstructorUsedError;
   String get model => throw _privateConstructorUsedError;
   String get color => throw _privateConstructorUsedError;
+  String get year => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
+  double get lat => throw _privateConstructorUsedError;
+  double get lng => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CarModelCopyWith<CarModel> get copyWith =>
@@ -37,7 +41,11 @@ abstract class $CarModelCopyWith<$Res> {
       String registration,
       String brand,
       String model,
-      String color});
+      String color,
+      String year,
+      String ownerId,
+      double lat,
+      double lng});
 }
 
 /// @nodoc
@@ -58,6 +66,10 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
     Object? brand = null,
     Object? model = null,
     Object? color = null,
+    Object? year = null,
+    Object? ownerId = null,
+    Object? lat = null,
+    Object? lng = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -80,6 +92,22 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String,
+      year: null == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      lat: null == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double,
+      lng: null == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -96,7 +124,11 @@ abstract class _$$_CarModelCopyWith<$Res> implements $CarModelCopyWith<$Res> {
       String registration,
       String brand,
       String model,
-      String color});
+      String color,
+      String year,
+      String ownerId,
+      double lat,
+      double lng});
 }
 
 /// @nodoc
@@ -115,6 +147,10 @@ class __$$_CarModelCopyWithImpl<$Res>
     Object? brand = null,
     Object? model = null,
     Object? color = null,
+    Object? year = null,
+    Object? ownerId = null,
+    Object? lat = null,
+    Object? lng = null,
   }) {
     return _then(_$_CarModel(
       id: null == id
@@ -137,6 +173,22 @@ class __$$_CarModelCopyWithImpl<$Res>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String,
+      year: null == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      lat: null == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double,
+      lng: null == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -149,7 +201,11 @@ class _$_CarModel implements _CarModel {
       required this.registration,
       required this.brand,
       required this.model,
-      required this.color});
+      required this.color,
+      required this.year,
+      required this.ownerId,
+      required this.lat,
+      required this.lng});
 
   @override
   final String id;
@@ -161,10 +217,18 @@ class _$_CarModel implements _CarModel {
   final String model;
   @override
   final String color;
+  @override
+  final String year;
+  @override
+  final String ownerId;
+  @override
+  final double lat;
+  @override
+  final double lng;
 
   @override
   String toString() {
-    return 'CarModel(id: $id, registration: $registration, brand: $brand, model: $model, color: $color)';
+    return 'CarModel(id: $id, registration: $registration, brand: $brand, model: $model, color: $color, year: $year, ownerId: $ownerId, lat: $lat, lng: $lng)';
   }
 
   @override
@@ -177,12 +241,16 @@ class _$_CarModel implements _CarModel {
                 other.registration == registration) &&
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.model, model) || other.model == model) &&
-            (identical(other.color, color) || other.color == color));
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.year, year) || other.year == year) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.lng, lng) || other.lng == lng));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, registration, brand, model, color);
+  int get hashCode => Object.hash(runtimeType, id, registration, brand, model,
+      color, year, ownerId, lat, lng);
 
   @JsonKey(ignore: true)
   @override
@@ -197,7 +265,11 @@ abstract class _CarModel implements CarModel {
       required final String registration,
       required final String brand,
       required final String model,
-      required final String color}) = _$_CarModel;
+      required final String color,
+      required final String year,
+      required final String ownerId,
+      required final double lat,
+      required final double lng}) = _$_CarModel;
 
   @override
   String get id;
@@ -209,6 +281,14 @@ abstract class _CarModel implements CarModel {
   String get model;
   @override
   String get color;
+  @override
+  String get year;
+  @override
+  String get ownerId;
+  @override
+  double get lat;
+  @override
+  double get lng;
   @override
   @JsonKey(ignore: true)
   _$$_CarModelCopyWith<_$_CarModel> get copyWith =>

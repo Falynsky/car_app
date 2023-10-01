@@ -1,3 +1,4 @@
+import 'package:cars_app/features/car_details/data/dto/owner_dto.dart';
 import 'package:cars_app/features/car_list/data/dto/car_dto.dart';
 
 typedef T JsonFactory<T>(Map<String, dynamic> json);
@@ -5,6 +6,7 @@ typedef T JsonFactory<T>(Map<String, dynamic> json);
 class JsonTypeParser {
   static const Map<Type, JsonFactory> jsonFactories = <Type, JsonFactory>{
     CarDTO: CarDTO.fromJson,
+    OwnerDTO: OwnerDTO.fromJson,
   };
 
   static dynamic decode<T>(entity) {

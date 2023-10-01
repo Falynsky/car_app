@@ -10,5 +10,9 @@ class CarModel with _$CarModel {
     required String brand,
     required String model,
     required String color,
+    required String year,
+    required String ownerId,
+    required double lat,
+    required double lng,
   }) = _CarModel;
 }

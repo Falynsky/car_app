@@ -2,6 +2,8 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'car_dto.g.dart';
 
+double stringToDouble(value) => double.parse(value.toString());
+
 @JsonSerializable()
 class CarDTO {
   @JsonKey(name: '_id')
@@ -10,6 +12,12 @@ class CarDTO {
   final String brand;
   final String model;
   final String color;
+  final String year;
+  final String ownerId;
+  @JsonKey(fromJson: stringToDouble)
+  final double lat;
+  @JsonKey(fromJson: stringToDouble)
+  final double lng;
 
   const CarDTO({
     required this.id,
@@ -17,6 +25,10 @@ class CarDTO {
     required this.brand,
     required this.model,
     required this.color,
+    required this.year,
+    required this.ownerId,
+    required this.lat,
+    required this.lng,
   });
 
   factory CarDTO.fromJson(Map<String, Object?> json) => _$CarDTOFromJson(json);

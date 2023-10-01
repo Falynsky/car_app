@@ -13,6 +13,10 @@ class CarModelMapper implements TwoWayMapper<CarModel, CarDTO> {
       model: value.model,
       color: value.color,
       registration: value.registration,
+      year: value.year,
+      ownerId: value.ownerId,
+      lat: value.lat,
+      lng: value.lng,
     );
   }
 
@@ -24,6 +28,10 @@ class CarModelMapper implements TwoWayMapper<CarModel, CarDTO> {
       model: value.model,
       color: value.color,
       registration: value.registration,
+      year: value.year,
+      ownerId: value.ownerId,
+      lat: value.lat,
+      lng: value.lat,
     );
   }
 }
