@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:geocoder_buddy/geocoder_buddy.dart';
 import 'package:latlong2/latlong.dart';
 
 class CarLocalizationBox extends StatefulWidget {
@@ -20,10 +21,12 @@ class _CarLocalizationBoxState extends State<CarLocalizationBox> {
   double latitude = 50.325909;
   double longitude = 19.187201;
   late final List<Marker> markers;
-
+  late LatLng latLng;
+  MapController mapController = MapController();
   @override
   void initState() {
     super.initState();
+    latLng = LatLng(latitude, longitude);
     markers = <Marker>[
       buildMarker(latitude, longitude),
     ];
@@ -34,13 +37,26 @@ class _CarLocalizationBoxState extends State<CarLocalizationBox> {
     return Center(
       child: Column(
         children: <Widget>[
+          InkWell(
+              onTap: () {
+                GeocoderBuddy.query('Dąbrowa Górnicza').then((List<GBSearchData> data) {
+                  markers.clear();
+                  latLng = LatLng(double.parse(data[0].lat), double.parse(data[0].lon));
+                  mapController.move(latLng, 17);
+                  final Marker buildMarker2 = buildMarker(double.parse(data[0].lat), double.parse(data[0].lon));
+                  markers.add(buildMarker2);
+                  setState(() {});
+                });
+              },
+              child: Text('Ustaw moją lokalizację')),
           SizedBox(
             height: 200,
             width: 300,
             child: FlutterMap(
+              mapController: mapController,
               options: MapOptions(
                   maxZoom: 18,
-                  center: LatLng(50.325909, 19.187201),
+                  center: latLng,
                   zoom: 17,
                   onTap: (TapPosition e, LatLng l) async {
                     markers.clear();

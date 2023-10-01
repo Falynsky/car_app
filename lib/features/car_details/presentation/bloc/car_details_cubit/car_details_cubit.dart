@@ -21,7 +21,7 @@ class CarDetailCubit extends Cubit<CarDetailsState> {
     emit(const CarDetailsState.loading());
     final CarModel? carModel = car;
     final String ownerId = carModel!.ownerId;
-    final List<GBSearchData> list = await GeocoderBuddy.query('Dąbrowa Górnicza');
+    final List<GBSearchData> list = await GeocoderBuddy.query('Katowice');
     final Either<Failure, OwnerModel> either = await getOwnerUseCase(Params(ownerId: ownerId));
     either.fold(
       (Failure failure) => emit(CarDetailsState.failure(message: failure.message)),
