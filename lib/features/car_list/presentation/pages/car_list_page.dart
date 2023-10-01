@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CarListPage extends StatelessWidget {
-  const CarListPage({Key? key}) : super(key: key);
+  const CarListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,10 @@ class CarListPage extends StatelessWidget {
   }
 
   void _listener(BuildContext context, CarListState state) {
-    state.maybeWhen(orElse: () {}, failure: (String message) => _showSnackBar(context, message));
+    state.maybeWhen(
+      orElse: () {},
+      failure: (String message) => _showSnackBar(context, message),
+    );
   }
 
   void _showSnackBar(BuildContext context, String message) {

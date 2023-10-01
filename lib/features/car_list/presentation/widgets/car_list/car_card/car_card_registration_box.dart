@@ -7,8 +7,8 @@ class CarCardRegistrationBox extends StatelessWidget {
 
   const CarCardRegistrationBox({
     required this.registration,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -23,8 +23,5 @@ abstract class CarListProvider extends ChopperService {
   Future<Response<List<CarDTO>>> getCars();
 }
 
-@LazySingleton(
-  as: CarListProvider,
-  env: <String>[Environment.test],
-)
+@LazySingleton(as: CarListProvider, env: <String>[Environment.test])
 class CarListProviderMock extends Mock implements CarListProvider {}

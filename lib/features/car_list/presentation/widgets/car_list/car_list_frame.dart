@@ -8,9 +8,8 @@ class CarListFrame extends StatelessWidget {
 
   CarListFrame({
     List<CarModel>? cars,
-    Key? key,
-  })  : cars = cars ?? <CarModel>[],
-        super(key: key);
+    super.key,
+  }) : cars = cars ?? <CarModel>[];
 
   @override
   Widget build(BuildContext context) {
