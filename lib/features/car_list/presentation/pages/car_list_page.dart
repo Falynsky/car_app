@@ -2,7 +2,7 @@ import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_cubit.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_state.dart';
-import 'package:cars_app/features/car_list/presentation/widgets/car_list_frame.dart';
+import 'package:cars_app/features/car_list/presentation/widgets/car_list/car_list_frame.dart';
 import 'package:cars_app/features/car_list/presentation/widgets/loading_spinner.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';

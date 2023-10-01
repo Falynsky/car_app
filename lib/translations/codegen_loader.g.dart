@@ -15,22 +15,24 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
-  "car_list_title": "Car list",
+  "car_list_title": "Cars",
   "car_brand": "Brand: {}",
-  "car_model": "Model: {}",
-  "car_color": "Body color:",
+  "car_model": "Model:",
+  "car_color": "Paint",
   "car_registration": "Registration: {}",
   "car_list_error": "Error while loading car list",
-  "car_list_empty": "No cars found"
+  "car_list_empty": "No cars found",
+  "car_details_title": "Car details"
 };
 static const Map<String,dynamic> pl = {
-  "car_list_title": "Lista samochodów",
+  "car_list_title": "Samochody",
   "car_brand": "Marka: {}",
-  "car_model": "Model: {}",
-  "car_color": "Kolor nawozia:",
-  "car_registration": "Nr. Rejestracji: {}",
+  "car_model": "Model:",
+  "car_color": "Lakier",
+  "car_registration": "Rejestracja: {}",
   "car_list_error": "Nie można pobrać listy samochodów",
-  "car_list_empty": "Brak samochodów"
+  "car_list_empty": "Brak samochodów",
+  "car_details_title": "Szczegóły pojazdu"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "pl": pl};
 }
