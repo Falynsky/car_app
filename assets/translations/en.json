@@ -1,7 +1,9 @@
 {
-  "car_list_title":"Car list",
+  "car_list_title": "Cars",
   "car_brand": "Brand: {}",
   "car_model": "Model: {}",
-  "car_color": "Color: {}",
-  "car_registration": "Registration: {}"
+  "car_color": "Body color:",
+  "car_registration": "Registration: {}",
+  "car_list_error": "Error while loading car list",
+  "car_list_empty": "No cars found"
 }

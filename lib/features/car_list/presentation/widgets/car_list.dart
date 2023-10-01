@@ -1,5 +1,5 @@
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
-import 'package:cars_app/features/car_list/presentation/widgets/car_list_card.dart';
+import 'package:cars_app/features/car_list/presentation/widgets/car_list_card/car_list_card.dart';
 import 'package:flutter/material.dart';
 
 class CarList extends StatelessWidget {

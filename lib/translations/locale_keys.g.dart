@@ -6,5 +6,7 @@ abstract class  LocaleKeys {
   static const car_model = 'car_model';
   static const car_color = 'car_color';
   static const car_registration = 'car_registration';
+  static const car_list_error = 'car_list_error';
+  static const car_list_empty = 'car_list_empty';
 
 }
