@@ -41,7 +41,7 @@ class CarCardColorBox extends StatelessWidget {
               style: TextStyle(color: getForegroundColor),
             ),
           ),
-        )
+        ),
       ],
     );
   }

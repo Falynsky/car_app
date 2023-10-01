@@ -25,6 +25,10 @@ dependencies:
   injecteo: 1.0.0
   mocktail: 1.0.0
   easy_localization: 3.0.3
+  flutter_map: 4.0.0
+  latlong2: 0.8.0
+  geocoder_buddy: 1.0.1
+#  location: 5.0.3
 
 dev_dependencies:
   flutter_test:

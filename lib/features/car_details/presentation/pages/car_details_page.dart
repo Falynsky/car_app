@@ -2,11 +2,14 @@ import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/features/car_details/domain/models/owner_model.dart';
 import 'package:cars_app/features/car_details/presentation/bloc/car_details_cubit/car_details_cubit.dart';
 import 'package:cars_app/features/car_details/presentation/bloc/car_details_cubit/car_details_state.dart';
+import 'package:cars_app/features/car_details/presentation/widgets/car_localization_box.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
+import 'package:cars_app/features/car_list/presentation/widgets/car_list/car_card/car_card_color_box.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:latlong2/latlong.dart';
 
 class CarDetailsPage extends StatelessWidget {
   final CarModel car;
@@ -55,16 +58,22 @@ class CarDetailsPage extends StatelessWidget {
                   return state.maybeWhen(
                     orElse: () => const Center(child: Text('other')),
                     loading: () => const Center(child: CircularProgressIndicator()),
-                    success: (OwnerModel owner) => Container(
-                      child: Column(children: <Widget>[
-                        Text(car.brand),
-                        Text(car.model),
-                        Text(car.registration),
-                        Text(car.color),
-                        Text('${owner.firstName} ${owner.lastName}'),
-                        Text(car.lat.toString()),
-                        Text(car.lng.toString()),
-                      ]),
+                    success: (LatLng latLng, OwnerModel owner) => Container(
+                      child: Center(
+                        child: Column(
+                          children: <Widget>[
+                            CarLocalizationBox(
+                              lat: latLng.latitude,
+                              lng: latLng.longitude,
+                            ),
+                            const Text(LocaleKeys.car_brand).tr(args: <String>[car.brand]),
+                            const Text(LocaleKeys.car_model).tr(args: <String>[car.model]),
+                            const Text(LocaleKeys.car_registration).tr(args: <String>[car.registration]),
+                            CarCardColorBox(color: car.color),
+                            Text('${owner.firstName} ${owner.lastName}'),
+                          ],
+                        ),
+                      ),
                     ),
                   );
                 },
