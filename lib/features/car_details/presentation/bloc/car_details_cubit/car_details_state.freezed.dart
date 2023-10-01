@@ -19,21 +19,21 @@ mixin _$CarDetailsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(LatLng latLng, OwnerModel owner) success,
+    required TResult Function(OwnerModel owner) success,
     required TResult Function(String message) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(LatLng latLng, OwnerModel owner)? success,
+    TResult? Function(OwnerModel owner)? success,
     TResult? Function(String message)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(LatLng latLng, OwnerModel owner)? success,
+    TResult Function(OwnerModel owner)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) =>
@@ -118,7 +118,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(LatLng latLng, OwnerModel owner) success,
+    required TResult Function(OwnerModel owner) success,
     required TResult Function(String message) failure,
   }) {
     return loading();
@@ -128,7 +128,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(LatLng latLng, OwnerModel owner)? success,
+    TResult? Function(OwnerModel owner)? success,
     TResult? Function(String message)? failure,
   }) {
     return loading?.call();
@@ -138,7 +138,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(LatLng latLng, OwnerModel owner)? success,
+    TResult Function(OwnerModel owner)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -193,7 +193,7 @@ abstract class _$$_SuccessCopyWith<$Res> {
           _$_Success value, $Res Function(_$_Success) then) =
       __$$_SuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({LatLng latLng, OwnerModel owner});
+  $Res call({OwnerModel owner});
 
   $OwnerModelCopyWith<$Res> get owner;
 }
@@ -208,14 +208,9 @@ class __$$_SuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latLng = null,
     Object? owner = null,
   }) {
     return _then(_$_Success(
-      latLng: null == latLng
-          ? _value.latLng
-          : latLng // ignore: cast_nullable_to_non_nullable
-              as LatLng,
       owner: null == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
@@ -235,16 +230,14 @@ class __$$_SuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Success implements _Success {
-  const _$_Success({required this.latLng, required this.owner});
+  const _$_Success({required this.owner});
 
-  @override
-  final LatLng latLng;
   @override
   final OwnerModel owner;
 
   @override
   String toString() {
-    return 'CarDetailsState.success(latLng: $latLng, owner: $owner)';
+    return 'CarDetailsState.success(owner: $owner)';
   }
 
   @override
@@ -252,12 +245,11 @@ class _$_Success implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Success &&
-            (identical(other.latLng, latLng) || other.latLng == latLng) &&
             (identical(other.owner, owner) || other.owner == owner));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, latLng, owner);
+  int get hashCode => Object.hash(runtimeType, owner);
 
   @JsonKey(ignore: true)
   @override
@@ -269,32 +261,32 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(LatLng latLng, OwnerModel owner) success,
+    required TResult Function(OwnerModel owner) success,
     required TResult Function(String message) failure,
   }) {
-    return success(latLng, owner);
+    return success(owner);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(LatLng latLng, OwnerModel owner)? success,
+    TResult? Function(OwnerModel owner)? success,
     TResult? Function(String message)? failure,
   }) {
-    return success?.call(latLng, owner);
+    return success?.call(owner);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(LatLng latLng, OwnerModel owner)? success,
+    TResult Function(OwnerModel owner)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(latLng, owner);
+      return success(owner);
     }
     return orElse();
   }
@@ -335,11 +327,8 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements CarDetailsState {
-  const factory _Success(
-      {required final LatLng latLng,
-      required final OwnerModel owner}) = _$_Success;
+  const factory _Success({required final OwnerModel owner}) = _$_Success;
 
-  LatLng get latLng;
   OwnerModel get owner;
   @JsonKey(ignore: true)
   _$$_SuccessCopyWith<_$_Success> get copyWith =>
@@ -410,7 +399,7 @@ class _$_Failure implements _Failure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(LatLng latLng, OwnerModel owner) success,
+    required TResult Function(OwnerModel owner) success,
     required TResult Function(String message) failure,
   }) {
     return failure(message);
@@ -420,7 +409,7 @@ class _$_Failure implements _Failure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(LatLng latLng, OwnerModel owner)? success,
+    TResult? Function(OwnerModel owner)? success,
     TResult? Function(String message)? failure,
   }) {
     return failure?.call(message);
@@ -430,7 +419,7 @@ class _$_Failure implements _Failure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(LatLng latLng, OwnerModel owner)? success,
+    TResult Function(OwnerModel owner)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {

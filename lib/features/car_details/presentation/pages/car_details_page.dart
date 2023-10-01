@@ -9,7 +9,6 @@ import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:latlong2/latlong.dart';
 
 class CarDetailsPage extends StatelessWidget {
   final CarModel car;
@@ -58,13 +57,13 @@ class CarDetailsPage extends StatelessWidget {
                   return state.maybeWhen(
                     orElse: () => const Center(child: Text('other')),
                     loading: () => const Center(child: CircularProgressIndicator()),
-                    success: (LatLng latLng, OwnerModel owner) => Container(
+                    success: (OwnerModel owner) => Container(
                       child: Center(
                         child: Column(
                           children: <Widget>[
                             CarLocalizationBox(
-                              lat: latLng.latitude,
-                              lng: latLng.longitude,
+                              lat: car.lat,
+                              lng: car.lng,
                             ),
                             const Text(LocaleKeys.car_brand).tr(args: <String>[car.brand]),
                             const Text(LocaleKeys.car_model).tr(args: <String>[car.model]),
