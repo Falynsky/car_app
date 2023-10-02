@@ -1,6 +1,5 @@
 import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/core/widgets/loading_spinner.dart';
-import 'package:cars_app/features/car_adding_view/presentation/pages/car_adding_page.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_cubit.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_state.dart';
@@ -55,7 +54,7 @@ class CarListPage extends StatelessWidget {
           Navigator.of(context)
               .push(
                 PageRouteBuilder<Locale>(
-                  pageBuilder: (BuildContext context, _, __) => CarAddingPage(),
+                  pageBuilder: (BuildContext context, _, __) => Container(),
                 ),
               )
               .then((Locale? value) => carListCubit..initCarList());

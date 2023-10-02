@@ -17,15 +17,17 @@ class _$NewCarProvider extends NewCarProvider {
   final definitionType = NewCarProvider;
 
   @override
-  Future<Response<NewCarDTO>> addNewCar() {
+  Future<Response<NewCarDTO>> addNewCar(Map<dynamic, dynamic> car) {
     final Uri $url = Uri.parse('/car-list');
     final Map<String, String> $headers = {
       'x-apikey': '795ad45e4dc222bc0e5bd1c163bb885e3635e',
     };
+    final $body = car;
     final Request $request = Request(
       'POST',
       $url,
       client.baseUrl,
+      body: $body,
       headers: $headers,
     );
     return client.send<NewCarDTO, NewCarDTO>($request);
