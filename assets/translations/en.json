@@ -10,5 +10,7 @@
   "car_localization": "Car localization",
   "car_basic_data": "Basic data",
   "car_details_data": "Details data",
-  "car_year": "Year of production: {}"
+  "car_year": "Year of production: {}",
+  "car_owner": "Owner: {firstName} {lastName}",
+  "car_owner_unavailable": "Owner: Unavailable"
 }

@@ -1,11 +1,8 @@
 import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/core/widgets/loading_spinner.dart';
-import 'package:cars_app/features/car_details/domain/models/owner_model.dart';
 import 'package:cars_app/features/car_details/presentation/bloc/car_details_cubit/car_details_cubit.dart';
 import 'package:cars_app/features/car_details/presentation/bloc/car_details_cubit/car_details_state.dart';
-import 'package:cars_app/features/car_details/presentation/widgets/car_detail_info_frame.dart';
-import 'package:cars_app/features/car_details/presentation/widgets/car_detail_label.dart';
-import 'package:cars_app/features/car_details/presentation/widgets/car_localization_box.dart';
+import 'package:cars_app/features/car_details/presentation/widgets/car_details.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -22,7 +19,6 @@ class CarDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CarDetailCubit carListCubit = getIt<CarDetailCubit>()..initCarDetail(car);
     return WillPopScope(
       onWillPop: () => Future<bool>.value(false),
       child: Scaffold(
@@ -41,7 +37,6 @@ class CarDetailsPage extends StatelessWidget {
               color: Colors.black,
               icon: const Icon(Icons.language_rounded),
               iconSize: 30,
-              // Set the icon for the action widget
               onPressed: () {
                 context.setLocale(
                   context.locale == const Locale('pl') ? const Locale('en') : const Locale('pl'),
@@ -57,32 +52,11 @@ class CarDetailsPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 BlocBuilder<CarDetailCubit, CarDetailsState>(
-                  bloc: carListCubit..initCarDetail(car),
+                  bloc: getIt<CarDetailCubit>()..initCarDetail(car.ownerId),
                   builder: (BuildContext context, CarDetailsState state) {
                     return state.maybeWhen(
-                      orElse: () => const Center(child: Text('other')),
                       loading: () => const LoadingSpinner(),
-                      success: (OwnerModel owner) => Container(
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                const CarDetailLabel(label: LocaleKeys.car_localization),
-                                CarLocalizationBox(
-                                  lat: car.lat,
-                                  lng: car.lng,
-                                ),
-                                CarDetailInfoFrame(
-                                  car: car,
-                                  owner: owner,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                      orElse: () => CarDetails(car: car),
                     );
                   },
                 ),

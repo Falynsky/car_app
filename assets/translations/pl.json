@@ -10,5 +10,7 @@
   "car_localization": "Lokalizacja pojazdu",
   "car_basic_data": "Dane podstawowe",
   "car_details_data": "Dane szczegółowe",
-  "car_year": "Rok produkcji: {}"
+  "car_year": "Rok produkcji: {}",
+  "car_owner": "Właściciel: {firstName} {lastName}",
+  "car_owner_unavailable": "Właściciel: Nie dostępny"
 }

@@ -26,7 +26,9 @@ class CodegenLoader extends AssetLoader{
   "car_localization": "Car localization",
   "car_basic_data": "Basic data",
   "car_details_data": "Details data",
-  "car_year": "Year of production: {}"
+  "car_year": "Year of production: {}",
+  "car_owner": "Owner: {firstName} {lastName}",
+  "car_owner_unavailable": "Owner: Unavailable"
 };
 static const Map<String,dynamic> pl = {
   "car_list_title": "Samochody",
@@ -40,7 +42,9 @@ static const Map<String,dynamic> pl = {
   "car_localization": "Lokalizacja pojazdu",
   "car_basic_data": "Dane podstawowe",
   "car_details_data": "Dane szczegółowe",
-  "car_year": "Rok produkcji: {}"
+  "car_year": "Rok produkcji: {}",
+  "car_owner": "Właściciel: {firstName} {lastName}",
+  "car_owner_unavailable": "Właściciel: Nie dostępny"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "pl": pl};
 }

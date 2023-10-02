@@ -20,6 +20,7 @@ class CarListPage extends StatelessWidget {
         backgroundColor: Colors.amber,
         actions: <Widget>[
           IconButton(
+            color: Colors.black,
             icon: const Icon(Icons.language_rounded),
             iconSize: 30,
             onPressed: () {

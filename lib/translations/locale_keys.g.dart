@@ -13,5 +13,7 @@ abstract class  LocaleKeys {
   static const car_basic_data = 'car_basic_data';
   static const car_details_data = 'car_details_data';
   static const car_year = 'car_year';
+  static const car_owner = 'car_owner';
+  static const car_owner_unavailable = 'car_owner_unavailable';
 
 }
