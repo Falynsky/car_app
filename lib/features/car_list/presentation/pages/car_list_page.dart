@@ -1,5 +1,6 @@
 import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/core/widgets/loading_spinner.dart';
+import 'package:cars_app/features/car_adding_view/presentation/pages/car_adding_page.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_cubit.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_state.dart';
@@ -41,7 +42,7 @@ class CarListPage extends StatelessWidget {
               const SizedBox(height: 10),
               // Top half
               BlocBuilder<CarListCubit, CarListState>(
-                bloc: carListCubit..initCarList(),
+                bloc: carListCubit..fetchCars(),
                 builder: _builder,
               ),
               // Bottom half
@@ -53,11 +54,15 @@ class CarListPage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context)
               .push(
-                PageRouteBuilder<Locale>(
-                  pageBuilder: (BuildContext context, _, __) => Container(),
-                ),
-              )
-              .then((Locale? value) => carListCubit..initCarList());
+            PageRouteBuilder<bool>(
+              pageBuilder: (BuildContext context, _, __) => CarAddingPage(),
+            ),
+          )
+              .then((bool? reloadPage) {
+            if (reloadPage != null && reloadPage == true) {
+              carListCubit.fetchCars();
+            }
+          });
         },
         backgroundColor: Colors.amber,
         child: const Icon(Icons.add_rounded, size: 30),

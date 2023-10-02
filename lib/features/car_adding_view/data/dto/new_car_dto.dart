@@ -2,8 +2,11 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'new_car_dto.g.dart';
 
+double stringToDouble(value) => double.parse(value.toString());
+
 @JsonSerializable()
 class NewCarDTO {
+  @JsonKey(name: '_id')
   final String id;
   final String registration;
   final String brand;
@@ -11,7 +14,9 @@ class NewCarDTO {
   final String color;
   final String year;
   final String ownerId;
+  @JsonKey(fromJson: stringToDouble)
   final double lat;
+  @JsonKey(fromJson: stringToDouble)
   final double lng;
 
   const NewCarDTO({

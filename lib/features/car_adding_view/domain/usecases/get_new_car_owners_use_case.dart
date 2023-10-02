@@ -1,0 +1,18 @@
+import 'package:cars_app/core/error/failures.dart';
+import 'package:cars_app/core/usecases/usecase.dart';
+import 'package:cars_app/features/car_adding_view/domain/models/new_car_owner_model.dart';
+import 'package:cars_app/features/car_adding_view/domain/repositories/new_car_owner_repository.dart';
+import 'package:dartz/dartz.dart';
+import 'package:injecteo/injecteo.dart';
+
+@LazySingleton(env: <String>[Environment.dev])
+class GetNewCarOwnersUseCase extends UseCase<List<NewCarOwnerModel>, NoParams> {
+  final NewCarOwnerRepository newCarOwnerRepository;
+
+  GetNewCarOwnersUseCase(this.newCarOwnerRepository);
+
+  @override
+  Future<Either<Failure, List<NewCarOwnerModel>>> call(NoParams params) {
+    return newCarOwnerRepository.getOwners();
+  }
+}

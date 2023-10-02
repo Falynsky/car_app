@@ -1,11 +1,7 @@
-import 'package:cars_app/core/di/dependencies.dart';
-import 'package:cars_app/core/widgets/loading_spinner.dart';
-import 'package:cars_app/features/car_adding_view/presentation/bloc/car_adding_cubit/car_adding_cubit.dart';
-import 'package:cars_app/features/car_adding_view/presentation/bloc/car_adding_cubit/car_adding_state.dart';
+import 'package:cars_app/features/car_adding_view/presentation/widgets/car_adding_form_frame.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CarAddingPage extends StatelessWidget {
   @override
@@ -20,7 +16,7 @@ class CarAddingPage extends StatelessWidget {
             icon: const Icon(Icons.arrow_back_rounded),
             iconSize: 30,
             onPressed: () {
-              Navigator.of(context).pop(context.locale);
+              Navigator.of(context).pop(true);
             },
           ),
           actions: <Widget>[
@@ -35,23 +31,17 @@ class CarAddingPage extends StatelessWidget {
               },
             ),
           ],
-          title: const Text(LocaleKeys.car_details_title).tr(),
+          title: const Text(LocaleKeys.new_car_brand_title).tr(),
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 5),
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                BlocBuilder<CarAddingCubit, CarAddingState>(
-                  bloc: getIt<CarAddingCubit>(),
-                  builder: (BuildContext context, CarAddingState state) {
-                    return state.maybeWhen(
-                      loading: () => const LoadingSpinner(),
-                      orElse: Container.new,
-                    );
-                  },
-                ),
-              ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  CarAddingFormFrame(),
+                ],
+              ),
             ),
           ),
         ),

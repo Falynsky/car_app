@@ -39,7 +39,7 @@ void main() async {
         ]),
       );
     },
-    act: (CarListCubit cubit) async => cubit.initCarList(),
+    act: (CarListCubit cubit) async => cubit.fetchCars(),
     build: () => CarListCubit(getAllCarsUseCase: getAllCarsUseCase),
     expect: () => <CarListState>[
       const CarListState.loading(),
@@ -71,7 +71,7 @@ void main() async {
         (_) async => const Left<Failure, List<CarModel>>(ServerFailure('error')),
       );
     },
-    act: (CarListCubit cubit) async => cubit.initCarList(),
+    act: (CarListCubit cubit) async => cubit.fetchCars(),
     build: () => CarListCubit(getAllCarsUseCase: getAllCarsUseCase),
     expect: () => <CarListState>[
       const CarListState.loading(),

@@ -28,7 +28,22 @@ class CodegenLoader extends AssetLoader{
   "car_details_data": "Details data",
   "car_year": "Year of production: {}",
   "car_owner": "Owner: {firstName} {lastName}",
-  "car_owner_unavailable": "Owner: Unavailable"
+  "car_owner_unavailable": "Owner: Unavailable",
+  "new_car_brand_title": "Add new car",
+  "new_car_brand": "Brand",
+  "new_car_model": "Model",
+  "new_car_color": "Color",
+  "new_car_year": "Year of production",
+  "new_car_registration": "Registration",
+  "new_car_owner": "Owner",
+  "new_car_pick_owner": "Pick owner",
+  "new_car_pick_lat_lng": "Pick location",
+  "new_car_pick_color": "Pick color",
+  "new_car_lat": "Latitude",
+  "new_car_lng": "Length",
+  "new_car_add": "Save",
+  "example": "e.g. {}",
+  "input_error": "Empty input"
 };
 static const Map<String,dynamic> pl = {
   "car_list_title": "Samochody",
@@ -38,13 +53,28 @@ static const Map<String,dynamic> pl = {
   "car_registration": "Rejestracja: {}",
   "car_list_error": "Nie można pobrać listy samochodów",
   "car_list_empty": "Brak samochodów",
-  "car_details_title": "Szczegóły pojazdu",
-  "car_localization": "Lokalizacja pojazdu",
+  "car_details_title": "Szczegóły samochodów",
+  "car_localization": "Lokalizacja samochodów",
   "car_basic_data": "Dane podstawowe",
   "car_details_data": "Dane szczegółowe",
   "car_year": "Rok produkcji: {}",
   "car_owner": "Właściciel: {firstName} {lastName}",
-  "car_owner_unavailable": "Właściciel: Nie dostępny"
+  "car_owner_unavailable": "Właściciel: Nie dostępny",
+  "new_car_brand_title": "Dodaj nowy pojazd",
+  "new_car_brand": "Marka",
+  "new_car_model": "Model",
+  "new_car_color": "Kolor",
+  "new_car_year": "Rok produkcji",
+  "new_car_registration": "Rejestracja",
+  "new_car_owner": "Właściciel",
+  "new_car_pick_owner": "Wybierz właściciela",
+  "new_car_pick_lat_lng": "Wybierz lokalizację",
+  "new_car_pick_color": "Wybierz kolor",
+  "new_car_lat": "Szerokość",
+  "new_car_lng": "Długość",
+  "new_car_add": "Zapisz",
+  "example": "np. {}",
+  "input_error": "Uzupełnij pole"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "pl": pl};
 }

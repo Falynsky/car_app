@@ -15,7 +15,7 @@ class CarListCubit extends Cubit<CarListState> {
     required this.getAllCarsUseCase,
   }) : super(const CarListState.loading());
 
-  Future<void> initCarList() async {
+  Future<void> fetchCars() async {
     emit(const CarListState.loading());
     final Either<Failure, List<CarModel>> either = await getAllCarsUseCase(NoParams());
     either.fold(
