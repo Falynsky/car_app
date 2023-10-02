@@ -1,5 +1,6 @@
 import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/core/widgets/loading_spinner.dart';
+import 'package:cars_app/features/car_adding_view/presentation/pages/car_adding_page.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_cubit.dart';
 import 'package:cars_app/features/car_list/presentation/bloc/car_list_cubit/car_list_state.dart';
@@ -49,6 +50,19 @@ class CarListPage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context)
+              .push(
+                PageRouteBuilder<Locale>(
+                  pageBuilder: (BuildContext context, _, __) => CarAddingPage(),
+                ),
+              )
+              .then((Locale? value) => carListCubit..initCarList());
+        },
+        backgroundColor: Colors.amber,
+        child: const Icon(Icons.add_rounded, size: 30),
+      ),
     );
   }
 
@@ -80,7 +94,7 @@ class CarListPage extends StatelessWidget {
     return state.maybeWhen(
       orElse: CarListFrame.new,
       loading: () => const LoadingSpinner(),
-      success: (List<CarModel> cars) => CarListFrame(cars: [
+      success: (List<CarModel> cars) => CarListFrame(cars: <CarModel>[
         const CarModel(
           id: '1',
           brand: 'Ford',

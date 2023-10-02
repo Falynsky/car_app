@@ -22,7 +22,7 @@ class CarDetails extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const CarDetailLabel(label: LocaleKeys.car_localization),
+              CarDetailLabel(label: LocaleKeys.car_localization),
               CarLocalizationBox(
                 lat: car.lat,
                 lng: car.lng,

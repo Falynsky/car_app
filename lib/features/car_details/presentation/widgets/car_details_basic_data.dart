@@ -19,7 +19,7 @@ class CarDetailsBasicData extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const CarDetailLabel(label: LocaleKeys.car_basic_data),
+        CarDetailLabel(label: LocaleKeys.car_basic_data),
         const Text(LocaleKeys.car_brand).tr(args: <String>[brand]),
         const Text(LocaleKeys.car_model).tr(args: <String>[model]),
         const CarDetailsOwner(),

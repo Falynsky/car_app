@@ -23,7 +23,7 @@ class CarDetailsData extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const CarDetailLabel(label: LocaleKeys.car_details_data),
+        CarDetailLabel(label: LocaleKeys.car_details_data),
         const Text(LocaleKeys.car_year).tr(
           args: <String>[
             getYear.toString(),
