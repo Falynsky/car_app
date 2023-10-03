@@ -19,8 +19,6 @@ mixin _$NewCarOwnerModel {
   String get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
-  String get birthDate => throw _privateConstructorUsedError;
-  String get sex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewCarOwnerModelCopyWith<NewCarOwnerModel> get copyWith =>
@@ -33,12 +31,7 @@ abstract class $NewCarOwnerModelCopyWith<$Res> {
           NewCarOwnerModel value, $Res Function(NewCarOwnerModel) then) =
       _$NewCarOwnerModelCopyWithImpl<$Res, NewCarOwnerModel>;
   @useResult
-  $Res call(
-      {String id,
-      String firstName,
-      String lastName,
-      String birthDate,
-      String sex});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -57,8 +50,6 @@ class _$NewCarOwnerModelCopyWithImpl<$Res, $Val extends NewCarOwnerModel>
     Object? id = null,
     Object? firstName = null,
     Object? lastName = null,
-    Object? birthDate = null,
-    Object? sex = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -73,14 +64,6 @@ class _$NewCarOwnerModelCopyWithImpl<$Res, $Val extends NewCarOwnerModel>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      birthDate: null == birthDate
-          ? _value.birthDate
-          : birthDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      sex: null == sex
-          ? _value.sex
-          : sex // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -93,12 +76,7 @@ abstract class _$$_NewCarOwnerModelCopyWith<$Res>
       __$$_NewCarOwnerModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String firstName,
-      String lastName,
-      String birthDate,
-      String sex});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -115,8 +93,6 @@ class __$$_NewCarOwnerModelCopyWithImpl<$Res>
     Object? id = null,
     Object? firstName = null,
     Object? lastName = null,
-    Object? birthDate = null,
-    Object? sex = null,
   }) {
     return _then(_$_NewCarOwnerModel(
       id: null == id
@@ -131,14 +107,6 @@ class __$$_NewCarOwnerModelCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      birthDate: null == birthDate
-          ? _value.birthDate
-          : birthDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      sex: null == sex
-          ? _value.sex
-          : sex // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -147,11 +115,7 @@ class __$$_NewCarOwnerModelCopyWithImpl<$Res>
 
 class _$_NewCarOwnerModel implements _NewCarOwnerModel {
   const _$_NewCarOwnerModel(
-      {required this.id,
-      required this.firstName,
-      required this.lastName,
-      required this.birthDate,
-      required this.sex});
+      {required this.id, required this.firstName, required this.lastName});
 
   @override
   final String id;
@@ -159,14 +123,10 @@ class _$_NewCarOwnerModel implements _NewCarOwnerModel {
   final String firstName;
   @override
   final String lastName;
-  @override
-  final String birthDate;
-  @override
-  final String sex;
 
   @override
   String toString() {
-    return 'NewCarOwnerModel(id: $id, firstName: $firstName, lastName: $lastName, birthDate: $birthDate, sex: $sex)';
+    return 'NewCarOwnerModel(id: $id, firstName: $firstName, lastName: $lastName)';
   }
 
   @override
@@ -178,15 +138,11 @@ class _$_NewCarOwnerModel implements _NewCarOwnerModel {
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.birthDate, birthDate) ||
-                other.birthDate == birthDate) &&
-            (identical(other.sex, sex) || other.sex == sex));
+                other.lastName == lastName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, birthDate, sex);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName);
 
   @JsonKey(ignore: true)
   @override
@@ -199,9 +155,7 @@ abstract class _NewCarOwnerModel implements NewCarOwnerModel {
   const factory _NewCarOwnerModel(
       {required final String id,
       required final String firstName,
-      required final String lastName,
-      required final String birthDate,
-      required final String sex}) = _$_NewCarOwnerModel;
+      required final String lastName}) = _$_NewCarOwnerModel;
 
   @override
   String get id;
@@ -209,10 +163,6 @@ abstract class _NewCarOwnerModel implements NewCarOwnerModel {
   String get firstName;
   @override
   String get lastName;
-  @override
-  String get birthDate;
-  @override
-  String get sex;
   @override
   @JsonKey(ignore: true)
   _$$_NewCarOwnerModelCopyWith<_$_NewCarOwnerModel> get copyWith =>

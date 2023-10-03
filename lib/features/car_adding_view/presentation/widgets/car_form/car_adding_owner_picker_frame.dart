@@ -1,4 +1,5 @@
 import 'package:cars_app/core/utils/constant_styles.dart';
+import 'package:cars_app/features/car_adding_view/presentation/pages/new_car_owner_picker_page.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/car_adding_form_row_frame.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/text_field_component.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/custom_raised_button.dart';
@@ -31,7 +32,19 @@ class CarAddingOwnerPickerFrame extends StatelessWidget {
         CarAddingFormRowFrame(
           isExpanded: false,
           left: CustomRaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(
+                PageRouteBuilder<String>(
+                  pageBuilder: (BuildContext context, _, __) => const NewCarOwnerPickerPage(),
+                ),
+              )
+                  .then((String? value) {
+                if (value != null) {
+                  ownerIdController.text = value;
+                }
+              });
+            },
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,

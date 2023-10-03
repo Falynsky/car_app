@@ -8,7 +8,5 @@ class NewCarOwnerModel with _$NewCarOwnerModel {
     required String id,
     required String firstName,
     required String lastName,
-    required String birthDate,
-    required String sex,
   }) = _NewCarOwnerModel;
 }
