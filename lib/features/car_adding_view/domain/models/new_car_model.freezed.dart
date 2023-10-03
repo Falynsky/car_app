@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewCarModel {
-  String get id => throw _privateConstructorUsedError;
   String get registration => throw _privateConstructorUsedError;
   String get brand => throw _privateConstructorUsedError;
   String get model => throw _privateConstructorUsedError;
@@ -25,6 +24,7 @@ mixin _$NewCarModel {
   String get ownerId => throw _privateConstructorUsedError;
   double get lat => throw _privateConstructorUsedError;
   double get lng => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewCarModelCopyWith<NewCarModel> get copyWith =>
@@ -38,15 +38,15 @@ abstract class $NewCarModelCopyWith<$Res> {
       _$NewCarModelCopyWithImpl<$Res, NewCarModel>;
   @useResult
   $Res call(
-      {String id,
-      String registration,
+      {String registration,
       String brand,
       String model,
       String color,
       String year,
       String ownerId,
       double lat,
-      double lng});
+      double lng,
+      String? id});
 }
 
 /// @nodoc
@@ -62,7 +62,6 @@ class _$NewCarModelCopyWithImpl<$Res, $Val extends NewCarModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? registration = null,
     Object? brand = null,
     Object? model = null,
@@ -71,12 +70,9 @@ class _$NewCarModelCopyWithImpl<$Res, $Val extends NewCarModel>
     Object? ownerId = null,
     Object? lat = null,
     Object? lng = null,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       registration: null == registration
           ? _value.registration
           : registration // ignore: cast_nullable_to_non_nullable
@@ -109,6 +105,10 @@ class _$NewCarModelCopyWithImpl<$Res, $Val extends NewCarModel>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -122,15 +122,15 @@ abstract class _$$_NewCarModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String registration,
+      {String registration,
       String brand,
       String model,
       String color,
       String year,
       String ownerId,
       double lat,
-      double lng});
+      double lng,
+      String? id});
 }
 
 /// @nodoc
@@ -144,7 +144,6 @@ class __$$_NewCarModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? registration = null,
     Object? brand = null,
     Object? model = null,
@@ -153,12 +152,9 @@ class __$$_NewCarModelCopyWithImpl<$Res>
     Object? ownerId = null,
     Object? lat = null,
     Object? lng = null,
+    Object? id = freezed,
   }) {
     return _then(_$_NewCarModel(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       registration: null == registration
           ? _value.registration
           : registration // ignore: cast_nullable_to_non_nullable
@@ -191,6 +187,10 @@ class __$$_NewCarModelCopyWithImpl<$Res>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -199,18 +199,16 @@ class __$$_NewCarModelCopyWithImpl<$Res>
 
 class _$_NewCarModel implements _NewCarModel {
   const _$_NewCarModel(
-      {required this.id,
-      required this.registration,
+      {required this.registration,
       required this.brand,
       required this.model,
       required this.color,
       required this.year,
       required this.ownerId,
       required this.lat,
-      required this.lng});
+      required this.lng,
+      this.id});
 
-  @override
-  final String id;
   @override
   final String registration;
   @override
@@ -227,10 +225,12 @@ class _$_NewCarModel implements _NewCarModel {
   final double lat;
   @override
   final double lng;
+  @override
+  final String? id;
 
   @override
   String toString() {
-    return 'NewCarModel(id: $id, registration: $registration, brand: $brand, model: $model, color: $color, year: $year, ownerId: $ownerId, lat: $lat, lng: $lng)';
+    return 'NewCarModel(registration: $registration, brand: $brand, model: $model, color: $color, year: $year, ownerId: $ownerId, lat: $lat, lng: $lng, id: $id)';
   }
 
   @override
@@ -238,7 +238,6 @@ class _$_NewCarModel implements _NewCarModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NewCarModel &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.registration, registration) ||
                 other.registration == registration) &&
             (identical(other.brand, brand) || other.brand == brand) &&
@@ -247,12 +246,13 @@ class _$_NewCarModel implements _NewCarModel {
             (identical(other.year, year) || other.year == year) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.lng, lng) || other.lng == lng));
+            (identical(other.lng, lng) || other.lng == lng) &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, registration, brand, model,
-      color, year, ownerId, lat, lng);
+  int get hashCode => Object.hash(runtimeType, registration, brand, model,
+      color, year, ownerId, lat, lng, id);
 
   @JsonKey(ignore: true)
   @override
@@ -263,18 +263,16 @@ class _$_NewCarModel implements _NewCarModel {
 
 abstract class _NewCarModel implements NewCarModel {
   const factory _NewCarModel(
-      {required final String id,
-      required final String registration,
+      {required final String registration,
       required final String brand,
       required final String model,
       required final String color,
       required final String year,
       required final String ownerId,
       required final double lat,
-      required final double lng}) = _$_NewCarModel;
+      required final double lng,
+      final String? id}) = _$_NewCarModel;
 
-  @override
-  String get id;
   @override
   String get registration;
   @override
@@ -291,6 +289,8 @@ abstract class _NewCarModel implements NewCarModel {
   double get lat;
   @override
   double get lng;
+  @override
+  String? get id;
   @override
   @JsonKey(ignore: true)
   _$$_NewCarModelCopyWith<_$_NewCarModel> get copyWith =>

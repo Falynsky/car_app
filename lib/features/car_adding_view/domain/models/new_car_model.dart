@@ -5,7 +5,6 @@ part 'new_car_model.freezed.dart';
 @freezed
 class NewCarModel with _$NewCarModel {
   const factory NewCarModel({
-    required String id,
     required String registration,
     required String brand,
     required String model,
@@ -14,5 +13,6 @@ class NewCarModel with _$NewCarModel {
     required String ownerId,
     required double lat,
     required double lng,
+    String? id,
   }) = _NewCarModel;
 }
