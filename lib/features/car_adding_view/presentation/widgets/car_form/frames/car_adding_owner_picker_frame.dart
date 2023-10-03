@@ -1,5 +1,5 @@
 import 'package:cars_app/core/utils/constant_styles.dart';
-import 'package:cars_app/features/car_adding_view/presentation/pages/new_car_owner_picker_page.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/presentation/pages/new_car_owner_picker_page.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/frames/car_adding_form_row_frame.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/text_field_component.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/custom_raised_button.dart';

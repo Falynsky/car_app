@@ -1,5 +1,5 @@
 import 'package:cars_app/core/providers/car_app_provider.dart';
-import 'package:cars_app/features/car_adding_view/data/dto/new_car_owner_dto.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/data/dto/new_car_owner_dto.dart';
 import 'package:chopper/chopper.dart';
 import 'package:injecteo/injecteo.dart';
 

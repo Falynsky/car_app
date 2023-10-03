@@ -1,7 +1,7 @@
 import 'package:cars_app/features/car_adding_view/data/dto/error_dto.dart';
 import 'package:cars_app/features/car_adding_view/data/dto/new_car_dto.dart';
-import 'package:cars_app/features/car_adding_view/data/dto/new_car_owner_dto.dart';
 import 'package:cars_app/features/car_adding_view/data/dto/new_car_response_dto.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/data/dto/new_car_owner_dto.dart';
 import 'package:cars_app/features/car_details/data/dto/owner_dto.dart';
 import 'package:cars_app/features/car_list/data/dto/car_dto.dart';
 

@@ -1,9 +1,9 @@
 import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/core/widgets/loading_spinner.dart';
-import 'package:cars_app/features/car_adding_view/domain/models/new_car_owner_model.dart';
-import 'package:cars_app/features/car_adding_view/presentation/bloc/new_car_owner_cubit/new_car_owner_cubit.dart';
-import 'package:cars_app/features/car_adding_view/presentation/bloc/new_car_owner_cubit/new_car_owner_state.dart';
-import 'package:cars_app/features/car_adding_view/presentation/widgets/owner_picker/new_car_owner_picker_frame.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/domain/models/new_car_owner_model.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/presentation/bloc/new_car_owner_cubit/new_car_owner_cubit.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/presentation/bloc/new_car_owner_cubit/new_car_owner_state.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/presentation/widgets/owner_picker/new_car_owner_picker_frame.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';

@@ -1,8 +1,8 @@
 import 'package:cars_app/core/error/failures.dart';
-import 'package:cars_app/features/car_adding_view/data/mappers/new_car_owner_model_mapper.dart';
-import 'package:cars_app/features/car_adding_view/data/providers/new_car_owner_provider.dart';
-import 'package:cars_app/features/car_adding_view/domain/models/new_car_owner_model.dart';
-import 'package:cars_app/features/car_adding_view/domain/repositories/new_car_owner_repository.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/data/mappers/new_car_owner_model_mapper.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/data/providers/new_car_owner_provider.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/domain/models/new_car_owner_model.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/domain/respositories/new_car_owner_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injecteo/injecteo.dart';
 

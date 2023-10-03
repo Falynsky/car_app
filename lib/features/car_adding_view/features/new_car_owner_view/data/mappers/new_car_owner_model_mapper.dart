@@ -1,6 +1,6 @@
 import 'package:cars_app/core/data/two_way_mapper.dart';
-import 'package:cars_app/features/car_adding_view/data/dto/new_car_owner_dto.dart';
-import 'package:cars_app/features/car_adding_view/domain/models/new_car_owner_model.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/data/dto/new_car_owner_dto.dart';
+import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/domain/models/new_car_owner_model.dart';
 import 'package:injecteo/injecteo.dart';
 
 @inject
