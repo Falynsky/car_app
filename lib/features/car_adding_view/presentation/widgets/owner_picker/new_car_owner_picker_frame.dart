@@ -1,6 +1,6 @@
 import 'package:cars_app/core/widgets/empty_list.dart';
 import 'package:cars_app/features/car_adding_view/domain/models/new_car_owner_model.dart';
-import 'package:cars_app/features/car_adding_view/presentation/widgets/new_car_owner_picker.dart';
+import 'package:cars_app/features/car_adding_view/presentation/widgets/owner_picker/new_car_owner_picker.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 

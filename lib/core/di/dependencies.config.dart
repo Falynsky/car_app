@@ -29,7 +29,7 @@ import 'package:cars_app/features/car_adding_view/domain/usecases/get_new_car_ow
     as _i24;
 import 'package:cars_app/features/car_adding_view/presentation/bloc/car_adding_cubit/car_adding_cubit.dart'
     as _i22;
-import 'package:cars_app/features/car_adding_view/presentation/new_car_owner_cubit/new_car_owner_cubit.dart'
+import 'package:cars_app/features/car_adding_view/presentation/bloc/new_car_owner_cubit/new_car_owner_cubit.dart'
     as _i26;
 import 'package:cars_app/features/car_details/data/mappers/owner_model_mapper.dart'
     as _i17;

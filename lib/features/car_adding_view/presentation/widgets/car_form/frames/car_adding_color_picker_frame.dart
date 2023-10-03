@@ -1,7 +1,7 @@
 import 'package:cars_app/core/utils/color_extension.dart';
 import 'package:cars_app/core/utils/constant_styles.dart';
 import 'package:cars_app/core/utils/string_extension.dart';
-import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/car_adding_form_row_frame.dart';
+import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/frames/car_adding_form_row_frame.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/text_field_component.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/custom_raised_button.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
