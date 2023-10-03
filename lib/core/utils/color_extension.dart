@@ -9,4 +9,8 @@ extension ColorUtils on Color {
       return const Color(0xFFFFFFFF);
     }
   }
+
+  String get hexValue {
+    return '#${value.toRadixString(16).substring(2, 8).toUpperCase()}';
+  }
 }

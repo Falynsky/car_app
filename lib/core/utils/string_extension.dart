@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 extension StringExtension on String {
   Color get parseToColor {
     if (isEmpty) {
-      return Colors.transparent;
+      return Colors.white;
     }
 
     final String cleanedColor = replaceAll('#', '');

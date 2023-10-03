@@ -1,12 +1,15 @@
+import 'package:cars_app/core/utils/color_extension.dart';
 import 'package:cars_app/core/utils/constant_styles.dart';
+import 'package:cars_app/core/utils/string_extension.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/car_adding_form_row_frame.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/text_field_component.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/sign_up_button.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
-class CarAddingColorPickerFrame extends StatelessWidget {
+class CarAddingColorPickerFrame extends StatefulWidget {
   final TextEditingController colorController;
 
   const CarAddingColorPickerFrame({
@@ -15,12 +18,19 @@ class CarAddingColorPickerFrame extends StatelessWidget {
   });
 
   @override
+  State<CarAddingColorPickerFrame> createState() => _CarAddingColorPickerFrameState();
+}
+
+class _CarAddingColorPickerFrameState extends State<CarAddingColorPickerFrame> {
+  late Color pickerColor;
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         CarAddingFormRowFrame(
           left: TextFieldComponent(
-            controller: colorController,
+            controller: widget.colorController,
             label: LocaleKeys.new_car_color,
             placeHolder: LocaleKeys.new_car_color.tr(),
             icon: Icons.color_lens_rounded,
@@ -33,9 +43,7 @@ class CarAddingColorPickerFrame extends StatelessWidget {
         CarAddingFormRowFrame(
           isExpanded: false,
           left: CustomRaisedButton(
-            onPressed: () {
-              //TODO: dodać obsługe colorpickera z dialogu
-            },
+            onPressed: _openPicker,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -53,5 +61,39 @@ class CarAddingColorPickerFrame extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  dynamic _openPicker() {
+    pickerColor = widget.colorController.text.parseToColor;
+    showDialog(
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Pick a color!'),
+          content: SingleChildScrollView(
+            child: ColorPicker(
+              enableAlpha: false,
+              pickerColor: pickerColor,
+              onColorChanged: changeColor,
+              labelTypes: <ColorLabelType>[],
+            ),
+          ),
+          actions: <Widget>[
+            ElevatedButton(
+              child: const Text('Pick'),
+              onPressed: () {
+                widget.colorController.text = pickerColor.hexValue;
+                setState(() {});
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+      context: context,
+    );
+  }
+
+  void changeColor(Color color) {
+    pickerColor = color;
   }
 }

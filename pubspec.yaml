@@ -28,6 +28,7 @@ dependencies:
   flutter_map: 4.0.0
   latlong2: 0.8.0
   geocoder_buddy: 1.0.1
+  flutter_colorpicker: 1.0.3
 
 dev_dependencies:
   flutter_test:
