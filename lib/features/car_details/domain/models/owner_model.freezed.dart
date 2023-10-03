@@ -19,8 +19,6 @@ mixin _$OwnerModel {
   String get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
-  String get birthDate => throw _privateConstructorUsedError;
-  String get sex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OwnerModelCopyWith<OwnerModel> get copyWith =>
@@ -33,12 +31,7 @@ abstract class $OwnerModelCopyWith<$Res> {
           OwnerModel value, $Res Function(OwnerModel) then) =
       _$OwnerModelCopyWithImpl<$Res, OwnerModel>;
   @useResult
-  $Res call(
-      {String id,
-      String firstName,
-      String lastName,
-      String birthDate,
-      String sex});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -57,8 +50,6 @@ class _$OwnerModelCopyWithImpl<$Res, $Val extends OwnerModel>
     Object? id = null,
     Object? firstName = null,
     Object? lastName = null,
-    Object? birthDate = null,
-    Object? sex = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -73,14 +64,6 @@ class _$OwnerModelCopyWithImpl<$Res, $Val extends OwnerModel>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      birthDate: null == birthDate
-          ? _value.birthDate
-          : birthDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      sex: null == sex
-          ? _value.sex
-          : sex // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -93,12 +76,7 @@ abstract class _$$_OwnerModelCopyWith<$Res>
       __$$_OwnerModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String firstName,
-      String lastName,
-      String birthDate,
-      String sex});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -115,8 +93,6 @@ class __$$_OwnerModelCopyWithImpl<$Res>
     Object? id = null,
     Object? firstName = null,
     Object? lastName = null,
-    Object? birthDate = null,
-    Object? sex = null,
   }) {
     return _then(_$_OwnerModel(
       id: null == id
@@ -131,14 +107,6 @@ class __$$_OwnerModelCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      birthDate: null == birthDate
-          ? _value.birthDate
-          : birthDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      sex: null == sex
-          ? _value.sex
-          : sex // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -147,11 +115,7 @@ class __$$_OwnerModelCopyWithImpl<$Res>
 
 class _$_OwnerModel implements _OwnerModel {
   const _$_OwnerModel(
-      {required this.id,
-      required this.firstName,
-      required this.lastName,
-      required this.birthDate,
-      required this.sex});
+      {required this.id, required this.firstName, required this.lastName});
 
   @override
   final String id;
@@ -159,14 +123,10 @@ class _$_OwnerModel implements _OwnerModel {
   final String firstName;
   @override
   final String lastName;
-  @override
-  final String birthDate;
-  @override
-  final String sex;
 
   @override
   String toString() {
-    return 'OwnerModel(id: $id, firstName: $firstName, lastName: $lastName, birthDate: $birthDate, sex: $sex)';
+    return 'OwnerModel(id: $id, firstName: $firstName, lastName: $lastName)';
   }
 
   @override
@@ -178,15 +138,11 @@ class _$_OwnerModel implements _OwnerModel {
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.birthDate, birthDate) ||
-                other.birthDate == birthDate) &&
-            (identical(other.sex, sex) || other.sex == sex));
+                other.lastName == lastName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, birthDate, sex);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName);
 
   @JsonKey(ignore: true)
   @override
@@ -199,9 +155,7 @@ abstract class _OwnerModel implements OwnerModel {
   const factory _OwnerModel(
       {required final String id,
       required final String firstName,
-      required final String lastName,
-      required final String birthDate,
-      required final String sex}) = _$_OwnerModel;
+      required final String lastName}) = _$_OwnerModel;
 
   @override
   String get id;
@@ -209,10 +163,6 @@ abstract class _OwnerModel implements OwnerModel {
   String get firstName;
   @override
   String get lastName;
-  @override
-  String get birthDate;
-  @override
-  String get sex;
   @override
   @JsonKey(ignore: true)
   _$$_OwnerModelCopyWith<_$_OwnerModel> get copyWith =>

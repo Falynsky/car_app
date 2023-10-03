@@ -29,6 +29,8 @@ abstract class  LocaleKeys {
   static const new_car_lng = 'new_car_lng';
   static const new_car_add = 'new_car_add';
   static const example = 'example';
+  static const map_picker_address = 'map_picker_address';
   static const input_error = 'input_error';
+  static const pick = 'pick';
 
 }

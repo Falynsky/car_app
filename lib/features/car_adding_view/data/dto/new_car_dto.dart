@@ -7,8 +7,6 @@ String doubleToString(value) => value.toString();
 
 @JsonSerializable()
 class NewCarDTO {
-  @JsonKey(name: '_id')
-  final String id;
   final String registration;
   final String brand;
   final String model;
@@ -21,7 +19,6 @@ class NewCarDTO {
   final double lng;
 
   const NewCarDTO({
-    required this.id,
     required this.registration,
     required this.brand,
     required this.model,

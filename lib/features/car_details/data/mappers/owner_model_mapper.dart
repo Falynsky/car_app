@@ -11,8 +11,6 @@ class OwnerModelMapper implements TwoWayMapper<OwnerModel, OwnerDTO> {
       id: dto.id,
       firstName: dto.firstName,
       lastName: dto.lastName,
-      birthDate: dto.birthDate,
-      sex: dto.sex,
     );
   }
 
@@ -22,8 +20,6 @@ class OwnerModelMapper implements TwoWayMapper<OwnerModel, OwnerDTO> {
       id: value.id,
       firstName: value.firstName,
       lastName: value.lastName,
-      birthDate: value.birthDate,
-      sex: value.sex,
     );
   }
 }

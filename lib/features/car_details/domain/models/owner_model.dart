@@ -8,7 +8,5 @@ class OwnerModel with _$OwnerModel {
     required String id,
     required String firstName,
     required String lastName,
-    required String birthDate,
-    required String sex,
   }) = _OwnerModel;
 }

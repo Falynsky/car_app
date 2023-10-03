@@ -22,11 +22,11 @@ class RemoteNewCarRepository implements NewCarRepository {
   Future<Either<Failure, bool>> addNewCar(NewCarModel car) async {
     try {
       final NewCarDTO dto = mapper.toDTO(car);
-      final Map<String, Object?> json = dto.toJson()..remove('_id');
+      final Map<String, Object?> json = dto.toJson();
       final Response<NewCarDTO> response = await newCarProvider.addNewCar(json);
       return Right<Failure, bool>(response.isSuccessful);
     } on Exception {
-      return const Left<Failure, bool>(ServerFailure('Nie znalezionio właściciela'));
+      return const Left<Failure, bool>(ServerFailure('Błąd pobierania danych'));
     }
   }
 }

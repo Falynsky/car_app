@@ -36,7 +36,7 @@ class _CarAddingColorPickerFrameState extends State<CarAddingColorPickerFrame> {
             icon: Icons.color_lens_rounded,
             isRequired: true,
             customRegExp: RegExp(r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$'),
-            customErrorMessage: 'np. #FFFFFF',
+            customErrorMessage: LocaleKeys.example.tr(args: <String>['#FFFFFF']),
           ),
         ),
         const SizedBox(height: 10),
@@ -68,7 +68,7 @@ class _CarAddingColorPickerFrameState extends State<CarAddingColorPickerFrame> {
     showDialog(
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Pick a color!'),
+          title: const Text(LocaleKeys.new_car_pick_color).tr(),
           content: SingleChildScrollView(
             child: ColorPicker(
               enableAlpha: false,
@@ -79,7 +79,7 @@ class _CarAddingColorPickerFrameState extends State<CarAddingColorPickerFrame> {
           ),
           actions: <Widget>[
             ElevatedButton(
-              child: const Text('Pick'),
+              child: const Text(LocaleKeys.pick).tr(),
               onPressed: () {
                 widget.colorController.text = pickerColor.hexValue;
                 setState(() {});

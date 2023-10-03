@@ -27,5 +27,7 @@
   "new_car_lng": "Length",
   "new_car_add": "Save",
   "example": "e.g. {}",
-  "input_error": "Empty input"
+  "map_picker_address": "Address",
+  "input_error": "Empty input",
+  "pick" : "Pick"
 }

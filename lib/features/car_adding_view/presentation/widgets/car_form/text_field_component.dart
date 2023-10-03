@@ -5,20 +5,20 @@ import 'package:flutter/material.dart';
 
 class TextFieldComponent extends StatelessWidget {
   final TextEditingController controller;
-  final String label;
   final String placeHolder;
   final IconData icon;
   final bool isRequired;
+  final String? label;
   final bool? obscureText;
   final RegExp? customRegExp;
   final String? customErrorMessage;
 
   const TextFieldComponent({
     required this.controller,
-    required this.label,
-    required this.placeHolder,
     required this.icon,
+    required this.placeHolder,
     required this.isRequired,
+    this.label,
     this.customRegExp,
     this.obscureText,
     this.customErrorMessage,
@@ -31,10 +31,11 @@ class TextFieldComponent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(left: 4),
-            child: Text(label, style: labelStyle).tr(),
-          ),
+          if (label != null)
+            Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: Text(label!, style: labelStyle).tr(),
+            ),
           const SizedBox(height: 10.0),
           Container(
             alignment: Alignment.centerLeft,

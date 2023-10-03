@@ -7,7 +7,6 @@ part of 'new_car_dto.dart';
 // **************************************************************************
 
 NewCarDTO _$NewCarDTOFromJson(Map<String, dynamic> json) => NewCarDTO(
-      id: json['_id'] as String,
       registration: json['registration'] as String,
       brand: json['brand'] as String,
       model: json['model'] as String,
@@ -19,7 +18,6 @@ NewCarDTO _$NewCarDTOFromJson(Map<String, dynamic> json) => NewCarDTO(
     );
 
 Map<String, dynamic> _$NewCarDTOToJson(NewCarDTO instance) => <String, dynamic>{
-      '_id': instance.id,
       'registration': instance.registration,
       'brand': instance.brand,
       'model': instance.model,

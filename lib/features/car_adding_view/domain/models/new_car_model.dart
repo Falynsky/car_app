@@ -13,6 +13,5 @@ class NewCarModel with _$NewCarModel {
     required String ownerId,
     required double lat,
     required double lng,
-    String? id,
   }) = _NewCarModel;
 }

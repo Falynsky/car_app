@@ -8,7 +8,6 @@ class NewCarModelMapper implements TwoWayMapper<NewCarModel, NewCarDTO> {
   @override
   NewCarModel toModel(NewCarDTO dto) {
     return NewCarModel(
-      id: dto.id,
       registration: dto.registration,
       brand: dto.brand,
       model: dto.model,
@@ -23,7 +22,6 @@ class NewCarModelMapper implements TwoWayMapper<NewCarModel, NewCarDTO> {
   @override
   NewCarDTO toDTO(NewCarModel value) {
     return NewCarDTO(
-      id: value.id ?? '',
       registration: value.registration,
       brand: value.brand,
       model: value.model,

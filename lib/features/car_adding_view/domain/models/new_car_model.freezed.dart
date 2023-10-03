@@ -24,7 +24,6 @@ mixin _$NewCarModel {
   String get ownerId => throw _privateConstructorUsedError;
   double get lat => throw _privateConstructorUsedError;
   double get lng => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewCarModelCopyWith<NewCarModel> get copyWith =>
@@ -45,8 +44,7 @@ abstract class $NewCarModelCopyWith<$Res> {
       String year,
       String ownerId,
       double lat,
-      double lng,
-      String? id});
+      double lng});
 }
 
 /// @nodoc
@@ -70,7 +68,6 @@ class _$NewCarModelCopyWithImpl<$Res, $Val extends NewCarModel>
     Object? ownerId = null,
     Object? lat = null,
     Object? lng = null,
-    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
       registration: null == registration
@@ -105,10 +102,6 @@ class _$NewCarModelCopyWithImpl<$Res, $Val extends NewCarModel>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
@@ -129,8 +122,7 @@ abstract class _$$_NewCarModelCopyWith<$Res>
       String year,
       String ownerId,
       double lat,
-      double lng,
-      String? id});
+      double lng});
 }
 
 /// @nodoc
@@ -152,7 +144,6 @@ class __$$_NewCarModelCopyWithImpl<$Res>
     Object? ownerId = null,
     Object? lat = null,
     Object? lng = null,
-    Object? id = freezed,
   }) {
     return _then(_$_NewCarModel(
       registration: null == registration
@@ -187,10 +178,6 @@ class __$$_NewCarModelCopyWithImpl<$Res>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -206,8 +193,7 @@ class _$_NewCarModel implements _NewCarModel {
       required this.year,
       required this.ownerId,
       required this.lat,
-      required this.lng,
-      this.id});
+      required this.lng});
 
   @override
   final String registration;
@@ -225,12 +211,10 @@ class _$_NewCarModel implements _NewCarModel {
   final double lat;
   @override
   final double lng;
-  @override
-  final String? id;
 
   @override
   String toString() {
-    return 'NewCarModel(registration: $registration, brand: $brand, model: $model, color: $color, year: $year, ownerId: $ownerId, lat: $lat, lng: $lng, id: $id)';
+    return 'NewCarModel(registration: $registration, brand: $brand, model: $model, color: $color, year: $year, ownerId: $ownerId, lat: $lat, lng: $lng)';
   }
 
   @override
@@ -246,13 +230,12 @@ class _$_NewCarModel implements _NewCarModel {
             (identical(other.year, year) || other.year == year) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.lng, lng) || other.lng == lng) &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.lng, lng) || other.lng == lng));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, registration, brand, model,
-      color, year, ownerId, lat, lng, id);
+  int get hashCode => Object.hash(
+      runtimeType, registration, brand, model, color, year, ownerId, lat, lng);
 
   @JsonKey(ignore: true)
   @override
@@ -270,8 +253,7 @@ abstract class _NewCarModel implements NewCarModel {
       required final String year,
       required final String ownerId,
       required final double lat,
-      required final double lng,
-      final String? id}) = _$_NewCarModel;
+      required final double lng}) = _$_NewCarModel;
 
   @override
   String get registration;
@@ -289,8 +271,6 @@ abstract class _NewCarModel implements NewCarModel {
   double get lat;
   @override
   double get lng;
-  @override
-  String? get id;
   @override
   @JsonKey(ignore: true)
   _$$_NewCarModelCopyWith<_$_NewCarModel> get copyWith =>

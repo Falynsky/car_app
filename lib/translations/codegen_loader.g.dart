@@ -43,7 +43,9 @@ class CodegenLoader extends AssetLoader{
   "new_car_lng": "Length",
   "new_car_add": "Save",
   "example": "e.g. {}",
-  "input_error": "Empty input"
+  "map_picker_address": "Address",
+  "input_error": "Empty input",
+  "pick": "Pick"
 };
 static const Map<String,dynamic> pl = {
   "car_list_title": "Samochody",
@@ -74,7 +76,9 @@ static const Map<String,dynamic> pl = {
   "new_car_lng": "Długość",
   "new_car_add": "Zapisz",
   "example": "np. {}",
-  "input_error": "Uzupełnij pole"
+  "map_picker_address": "Adres",
+  "input_error": "Uzupełnij pole",
+  "pick": "Wybierz"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "pl": pl};
 }

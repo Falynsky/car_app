@@ -13,7 +13,7 @@
   "car_year": "Rok produkcji: {}",
   "car_owner": "Właściciel: {firstName} {lastName}",
   "car_owner_unavailable": "Właściciel: Nie dostępny",
-  "new_car_brand_title": "Dodaj nowy pojazd",
+  "new_car_brand_title": "Dodaj nowy samochodów",
   "new_car_brand": "Marka",
   "new_car_model": "Model",
   "new_car_color": "Kolor",
@@ -27,5 +27,7 @@
   "new_car_lng": "Długość",
   "new_car_add": "Zapisz",
   "example": "np. {}",
-  "input_error": "Uzupełnij pole"
+  "map_picker_address": "Adres",
+  "input_error": "Uzupełnij pole",
+  "pick" : "Wybierz"
 }

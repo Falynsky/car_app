@@ -24,7 +24,7 @@ class CarAddingAdditionalInfo extends StatelessWidget {
         icon: Icons.abc,
         isRequired: true,
         customRegExp: RegExp(r'^\d{4}$'),
-        customErrorMessage: 'np. 2021',
+        customErrorMessage: LocaleKeys.example.tr(args: <String>['2021']),
       ),
       right: TextFieldComponent(
         controller: registrationController,
