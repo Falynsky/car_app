@@ -12,4 +12,6 @@ extension StringExtension on String {
   }
 
   DateTime get parseToDate => DateTime.parse(this);
+
+  double get tryParseDouble => RegExp(r'^-?\d+(\.\d+)?$').hasMatch(this) ? double.parse(this) : 0;
 }

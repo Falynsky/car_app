@@ -5,6 +5,7 @@ import 'package:injecteo/injecteo.dart';
 
 part 'new_car_provider.chopper.dart';
 
+@LazySingleton(env: <String>[Environment.dev])
 @ChopperApi()
 abstract class NewCarProvider extends ChopperService {
   @factoryMethod
@@ -19,5 +20,4 @@ abstract class NewCarProvider extends ChopperService {
     },
   )
   Future<Response<NewCarDTO>> addNewCar(@Body() Map car);
-  //TODO: dodać pot request
 }

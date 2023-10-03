@@ -7,13 +7,13 @@ import 'package:equatable/equatable.dart';
 import 'package:injecteo/injecteo.dart';
 
 @LazySingleton(env: <String>[Environment.dev])
-class AddNewCarUseCase implements UseCase<NewCarModel, Params> {
+class AddNewCarUseCase implements UseCase<bool, Params> {
   final NewCarRepository newCarRepository;
 
   AddNewCarUseCase(this.newCarRepository);
 
   @override
-  Future<Either<Failure, NewCarModel>> call(Params params) async {
+  Future<Either<Failure, bool>> call(Params params) async {
     return newCarRepository.addNewCar(params.newCarModel);
   }
 }

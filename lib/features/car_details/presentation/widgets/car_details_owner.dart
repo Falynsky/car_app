@@ -14,9 +14,8 @@ class CarDetailsOwner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CarDetailCubit carListCubit = getIt<CarDetailCubit>();
     return BlocBuilder<CarDetailCubit, CarDetailsState>(
-      bloc: carListCubit,
+      bloc: getIt<CarDetailCubit>(),
       builder: (BuildContext context, CarDetailsState state) {
         return state.maybeWhen(
           success: (OwnerModel owner) {

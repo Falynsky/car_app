@@ -1,6 +1,8 @@
+import 'package:cars_app/core/di/dependencies.dart';
 import 'package:cars_app/features/car_adding_view/domain/models/new_car_model.dart';
+import 'package:cars_app/features/car_adding_view/presentation/bloc/car_adding_cubit/car_adding_cubit.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/car_adding_form_row_frame.dart';
-import 'package:cars_app/features/car_adding_view/presentation/widgets/sign_up_button.dart';
+import 'package:cars_app/features/car_adding_view/presentation/widgets/custom_raised_button.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +50,7 @@ class CarAddingSaveButtonFrame extends StatelessWidget {
               lat: double.parse(latController.text),
               lng: double.parse(lngController.text),
             );
+            getIt<CarAddingCubit>().registerNewCar(newCar);
             newCar.model;
           }
         },

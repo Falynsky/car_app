@@ -12,17 +12,17 @@ import 'package:cars_app/features/car_adding_view/data/mappers/new_car_model_map
 import 'package:cars_app/features/car_adding_view/data/mappers/new_car_owner_model_mapper.dart'
     as _i10;
 import 'package:cars_app/features/car_adding_view/data/providers/new_car_owner_provider.dart'
-    as _i13;
-import 'package:cars_app/features/car_adding_view/data/providers/new_car_provider.dart'
-    as _i16;
-import 'package:cars_app/features/car_adding_view/data/repositories/remote_new_car_owners_repository.dart'
-    as _i12;
-import 'package:cars_app/features/car_adding_view/data/repositories/remote_new_car_repository.dart'
-    as _i15;
-import 'package:cars_app/features/car_adding_view/domain/repositories/new_car_owner_repository.dart'
     as _i11;
-import 'package:cars_app/features/car_adding_view/domain/repositories/new_car_repository.dart'
+import 'package:cars_app/features/car_adding_view/data/providers/new_car_provider.dart'
     as _i14;
+import 'package:cars_app/features/car_adding_view/data/repositories/remote_new_car_owners_repository.dart'
+    as _i13;
+import 'package:cars_app/features/car_adding_view/data/repositories/remote_new_car_repository.dart'
+    as _i16;
+import 'package:cars_app/features/car_adding_view/domain/repositories/new_car_owner_repository.dart'
+    as _i12;
+import 'package:cars_app/features/car_adding_view/domain/repositories/new_car_repository.dart'
+    as _i15;
 import 'package:cars_app/features/car_adding_view/domain/usecases/add_new_car_use_case.dart'
     as _i21;
 import 'package:cars_app/features/car_adding_view/domain/usecases/get_new_car_owners_use_case.dart'
@@ -117,14 +117,24 @@ class OtherInjectionModule extends _i1.BaseInjectionModule {
         .registerFactory<_i9.NewCarModelMapper>(() => _i9.NewCarModelMapper());
     serviceLocatorHelper.registerFactory<_i10.NewCarOwnerModelMapper>(
         () => _i10.NewCarOwnerModelMapper());
-    serviceLocatorHelper.registerLazySingleton<_i11.NewCarOwnerRepository>(() =>
-        _i12.RemoteNewCarOwnersRepository(
-          newCarOwnerProvider: serviceLocator.get<_i13.NewCarOwnerProvider>(),
-          mapper: serviceLocator.get<_i10.NewCarOwnerModelMapper>(),
-        ));
-    serviceLocatorHelper.registerLazySingleton<_i14.NewCarRepository>(
-        () => _i15.RemoteNewCarRepository(
-              newCarProvider: serviceLocator.get<_i16.NewCarProvider>(),
+    serviceLocatorHelper.registerLazySingleton<_i11.NewCarOwnerProvider>(
+      () => _i11.NewCarOwnerProvider.create(
+          serviceLocator.get<_i2.CarAppProvider>()),
+      registerFor: {_dev},
+    );
+    serviceLocatorHelper.registerLazySingleton<_i12.NewCarOwnerRepository>(
+        () => _i13.RemoteNewCarOwnersRepository(
+              ownerProvider: serviceLocator.get<_i11.NewCarOwnerProvider>(),
+              mapper: serviceLocator.get<_i10.NewCarOwnerModelMapper>(),
+            ));
+    serviceLocatorHelper.registerLazySingleton<_i14.NewCarProvider>(
+      () =>
+          _i14.NewCarProvider.create(serviceLocator.get<_i2.CarAppProvider>()),
+      registerFor: {_dev},
+    );
+    serviceLocatorHelper.registerLazySingleton<_i15.NewCarRepository>(
+        () => _i16.RemoteNewCarRepository(
+              newCarProvider: serviceLocator.get<_i14.NewCarProvider>(),
               mapper: serviceLocator.get<_i9.NewCarModelMapper>(),
             ));
     serviceLocatorHelper
@@ -139,7 +149,7 @@ class OtherInjectionModule extends _i1.BaseInjectionModule {
               mapper: serviceLocator.get<_i17.OwnerModelMapper>(),
             ));
     serviceLocatorHelper.registerLazySingleton<_i21.AddNewCarUseCase>(
-      () => _i21.AddNewCarUseCase(serviceLocator.get<_i14.NewCarRepository>()),
+      () => _i21.AddNewCarUseCase(serviceLocator.get<_i15.NewCarRepository>()),
       registerFor: {_dev},
     );
     serviceLocatorHelper.registerLazySingleton<_i22.CarListCubit>(() =>
@@ -147,19 +157,21 @@ class OtherInjectionModule extends _i1.BaseInjectionModule {
             getAllCarsUseCase: serviceLocator.get<_i7.GetAllCarsUseCase>()));
     serviceLocatorHelper.registerLazySingleton<_i23.GetNewCarOwnersUseCase>(
       () => _i23.GetNewCarOwnersUseCase(
-          serviceLocator.get<_i11.NewCarOwnerRepository>()),
+          serviceLocator.get<_i12.NewCarOwnerRepository>()),
       registerFor: {_dev},
     );
     serviceLocatorHelper.registerLazySingleton<_i24.GetOwnerUseCase>(
       () => _i24.GetOwnerUseCase(serviceLocator.get<_i19.OwnerRepository>()),
       registerFor: {_dev},
     );
-    serviceLocatorHelper
-        .registerLazySingleton<_i25.CarAddingCubit>(() => _i25.CarAddingCubit(
-              addNewCarUseCase: serviceLocator.get<_i21.AddNewCarUseCase>(),
-              getNewCarOwnersUseCase:
-                  serviceLocator.get<_i23.GetNewCarOwnersUseCase>(),
-            ));
+    serviceLocatorHelper.registerLazySingleton<_i25.CarAddingCubit>(
+      () => _i25.CarAddingCubit(
+        addNewCarUseCase: serviceLocator.get<_i21.AddNewCarUseCase>(),
+        getNewCarOwnersUseCase:
+            serviceLocator.get<_i23.GetNewCarOwnersUseCase>(),
+      ),
+      registerFor: {_dev},
+    );
     serviceLocatorHelper.registerLazySingleton<_i26.CarDetailCubit>(() =>
         _i26.CarDetailCubit(
             getOwnerUseCase: serviceLocator.get<_i24.GetOwnerUseCase>()));

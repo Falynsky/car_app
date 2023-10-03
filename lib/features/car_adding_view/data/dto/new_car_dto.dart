@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'new_car_dto.g.dart';
 
 double stringToDouble(value) => double.parse(value.toString());
+String doubleToString(value) => value.toString();
 
 @JsonSerializable()
 class NewCarDTO {

@@ -3,5 +3,5 @@ import 'package:cars_app/features/car_adding_view/domain/models/new_car_model.da
 import 'package:dartz/dartz.dart';
 
 abstract class NewCarRepository {
-  Future<Either<Failure, NewCarModel>> addNewCar(NewCarModel car);
+  Future<Either<Failure, bool>> addNewCar(NewCarModel car);
 }

@@ -98,30 +98,7 @@ class CarListPage extends StatelessWidget {
     return state.maybeWhen(
       orElse: CarListFrame.new,
       loading: () => const LoadingSpinner(),
-      success: (List<CarModel> cars) => CarListFrame(cars: <CarModel>[
-        const CarModel(
-          id: '1',
-          brand: 'Ford',
-          model: 'Focus',
-          year: '2011-01-01T00:00:00.000Z',
-          registration: 'SD97XXXX',
-          color: '#0c226b',
-          ownerId: '1',
-          lat: 50.329095,
-          lng: 19.226502,
-        ),
-        const CarModel(
-          id: '2',
-          brand: 'Kia',
-          model: 'CEED',
-          year: '2023-01-01T00:00:00.000Z',
-          registration: 'SD0429L',
-          color: '#e04102',
-          ownerId: '2',
-          lat: 50.329109,
-          lng: 19.226600,
-        )
-      ]),
+      success: (List<CarModel> cars) => CarListFrame(cars: cars),
     );
   }
 }

@@ -22,10 +22,16 @@ class RemoteOwnersRepository implements OwnerRepository {
       // final Response<List<OwnerDTO>> response = await ownerProvider.getOwners();
       // final List<OwnerDTO> body = response.body ?? <OwnerDTO>[];
       // final List<OwnerModel> list = body.map(mapper.toModel).toList();
-      // final OwnerModel owner = list.firstWhere((OwnerModel element) => element.id == ownerId);
-      return Right<Failure, OwnerModel>(
-        OwnerModel(id: ownerId, firstName: 'Jan', lastName: 'Kowalski', sex: 'M', birthDate: '1990-01-01'),
-      );
+      OwnerModel? owner;
+      // for (final OwnerModel element in list) {
+      //   if (element.id == ownerId) {
+      //     owner = element;
+      //   }
+      // }
+      if (owner == null) {
+        return const Left<Failure, OwnerModel>(ServerFailure('Nie znalezionio właściciela'));
+      }
+      return Right<Failure, OwnerModel>(owner);
     } on Exception {
       return const Left<Failure, OwnerModel>(ServerFailure('Nie znalezionio właściciela'));
     }
