@@ -26,6 +26,7 @@
   "new_car_lat": "Latitude",
   "new_car_lng": "Length",
   "new_car_add": "Save",
+  "owners_list_empty": "No owners found",
   "example": "e.g. {}",
   "map_picker_address": "Address",
   "input_error": "Empty input",

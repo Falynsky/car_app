@@ -26,6 +26,7 @@
   "new_car_lat": "Szerokość",
   "new_car_lng": "Długość",
   "new_car_add": "Zapisz",
+  "owners_list_empty": "Brak właścicieli",
   "example": "np. {}",
   "map_picker_address": "Adres",
   "input_error": "Uzupełnij pole",
