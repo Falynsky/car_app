@@ -38,5 +38,6 @@ abstract class  LocaleKeys {
   static const unknown_error = 'unknown_error';
   static const fetch_data_error = 'fetch_data_error';
   static const owner_not_found = 'owner_not_found';
+  static const wrong_date_format = 'wrong_date_format';
 
 }

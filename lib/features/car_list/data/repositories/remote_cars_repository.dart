@@ -1,10 +1,8 @@
 import 'package:cars_app/core/error/failures.dart';
-import 'package:cars_app/features/car_list/data/dto/car_dto.dart';
 import 'package:cars_app/features/car_list/data/mappers/car_model_mapper.dart';
 import 'package:cars_app/features/car_list/data/providers/car_list_provider.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:cars_app/features/car_list/domain/repositories/cars_repository.dart';
-import 'package:chopper/chopper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injecteo/injecteo.dart';
 
@@ -21,10 +19,24 @@ class RemoteCarsRepository implements CarsRepository {
   @override
   Future<Either<Failure, List<CarModel>>> getAllCars() async {
     try {
-      final Response<List<CarDTO>> response = await carListProvider.getCars();
-      final List<CarDTO> body = response.body ?? <CarDTO>[];
-      final List<CarModel> list = body.map(mapper.toModel).toList();
-      return Right<Failure, List<CarModel>>(list);
+      // final Response<List<CarDTO>> response = await carListProvider.getCars();
+/*      final List<CarDTO> body = response.body ?? <CarDTO>[];
+      final List<CarModel> list = body.map(mapper.toModel).toList();*/
+      return const Right<Failure, List<CarModel>>(
+        <CarModel>[
+          CarModel(
+            id: '1',
+            registration: 'registration',
+            brand: 'brand',
+            model: 'model',
+            color: '#AAAAAA',
+            year: '1111-01-01T00:00:00.000Z',
+            ownerId: 'ownerId',
+            lat: 50.1,
+            lng: 19.2,
+          ),
+        ],
+      );
     } on Exception {
       return const Left<Failure, List<CarModel>>(ServerFailure('Błąd pobierania danych'));
     }

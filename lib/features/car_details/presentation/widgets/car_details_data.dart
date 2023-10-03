@@ -14,9 +14,9 @@ class CarDetailsData extends StatelessWidget {
     super.key,
   });
 
-  int get getYear => getParsedDate.year;
+  int? get getYear => getParsedDate?.year;
 
-  DateTime get getParsedDate => year.parseToDate;
+  DateTime? get getParsedDate => year.parseToDate;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +25,12 @@ class CarDetailsData extends StatelessWidget {
       children: <Widget>[
         CarDetailLabel(label: LocaleKeys.car_details_data),
         const Text(LocaleKeys.car_year).tr(
-          args: <String>[
-            getYear.toString(),
-          ],
+          args: <String>[getStringifyYear],
         ),
         const Text(LocaleKeys.car_registration).tr(args: <String>[registration]),
       ],
     );
   }
+
+  String get getStringifyYear => getYear?.toString() ?? LocaleKeys.wrong_date_format.tr();
 }

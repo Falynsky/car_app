@@ -51,7 +51,8 @@ class CodegenLoader extends AssetLoader{
   "required_error": "Field {} is required",
   "unknown_error": "Unknown error occured in {}",
   "fetch_data_error": "Error while fetching data",
-  "owner_not_found": "Owner not found"
+  "owner_not_found": "Owner not found",
+  "wrong_date_format": "Wrong date format"
 };
 static const Map<String,dynamic> pl = {
   "car_list_title": "Samochody",
@@ -90,7 +91,8 @@ static const Map<String,dynamic> pl = {
   "required_error": "Pole {} jest wymagane",
   "unknown_error": "Wystąpił nieznany błąd w polu {}",
   "fetch_data_error": "Wystąpił błąd podczas pobierania danych",
-  "owner_not_found": "Nie znaleziono właściciela"
+  "owner_not_found": "Nie znaleziono właściciela",
+  "wrong_date_format": "Nieprawidłowy format daty"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "pl": pl};
 }

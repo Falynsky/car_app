@@ -11,7 +11,8 @@ extension StringExtension on String {
     return Color(parsedColorValue + 0xFF000000);
   }
 
-  DateTime get parseToDate => DateTime.parse(this);
+  DateTime? get parseToDate =>
+      RegExp(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$').hasMatch(this) ? DateTime.parse(this) : null;
 
   double get tryParseDouble => RegExp(r'^-?\d+(\.\d+)?$').hasMatch(this) ? double.parse(this) : 0;
 }
