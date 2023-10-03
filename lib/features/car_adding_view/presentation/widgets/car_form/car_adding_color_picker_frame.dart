@@ -33,7 +33,9 @@ class CarAddingColorPickerFrame extends StatelessWidget {
         CarAddingFormRowFrame(
           isExpanded: false,
           left: CustomRaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              //TODO: dodać obsługe colorpickera z dialogu
+            },
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,

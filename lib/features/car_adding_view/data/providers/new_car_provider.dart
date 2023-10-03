@@ -19,4 +19,5 @@ abstract class NewCarProvider extends ChopperService {
     },
   )
   Future<Response<NewCarDTO>> addNewCar(@Body() Map car);
+  //TODO: dodać pot request
 }

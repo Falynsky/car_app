@@ -44,7 +44,9 @@ class CarAddingMapPickerFrame extends StatelessWidget {
         CarAddingFormRowFrame(
           isExpanded: false,
           left: CustomRaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              //TODO: dodać obsługe map pickera z dialogu
+            },
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
