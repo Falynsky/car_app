@@ -23,7 +23,7 @@ class CarLocalizationBox extends StatelessWidget {
             options: MapOptions(
               interactiveFlags: InteractiveFlag.none,
               center: LatLng(lat, lng),
-              zoom: 16,
+              zoom: 15,
             ),
             children: <Widget>[
               TileLayer(

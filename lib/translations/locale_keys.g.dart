@@ -33,5 +33,10 @@ abstract class  LocaleKeys {
   static const map_picker_address = 'map_picker_address';
   static const input_error = 'input_error';
   static const pick = 'pick';
+  static const unique_error = 'unique_error';
+  static const required_error = 'required_error';
+  static const unknown_error = 'unknown_error';
+  static const fetch_data_error = 'fetch_data_error';
+  static const owner_not_found = 'owner_not_found';
 
 }

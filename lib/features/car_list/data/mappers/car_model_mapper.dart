@@ -31,7 +31,7 @@ class CarModelMapper implements TwoWayMapper<CarModel, CarDTO> {
       year: value.year,
       ownerId: value.ownerId,
       lat: value.lat,
-      lng: value.lat,
+      lng: value.lng,
     );
   }
 }

@@ -17,7 +17,7 @@ class _$NewCarProvider extends NewCarProvider {
   final definitionType = NewCarProvider;
 
   @override
-  Future<Response<NewCarDTO>> addNewCar(Map<dynamic, dynamic> car) {
+  Future<Response<NewCarResponseDTO>> addNewCar(Map<String, dynamic> car) {
     final Uri $url = Uri.parse('/car-list');
     final Map<String, String> $headers = {
       'x-apikey': '795ad45e4dc222bc0e5bd1c163bb885e3635e',
@@ -30,6 +30,6 @@ class _$NewCarProvider extends NewCarProvider {
       body: $body,
       headers: $headers,
     );
-    return client.send<NewCarDTO, NewCarDTO>($request);
+    return client.send<NewCarResponseDTO, NewCarResponseDTO>($request);
   }
 }

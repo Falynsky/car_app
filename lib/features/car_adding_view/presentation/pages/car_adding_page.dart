@@ -41,8 +41,9 @@ class CarAddingPage extends StatelessWidget {
           bloc: getIt<CarAddingCubit>(),
           listener: (BuildContext context, CarAddingState state) {
             state.maybeWhen(
-              orElse: () => null,
+              error: (_, String message) => _showSnackBar(context, message),
               success: () => Navigator.of(context).pop(true),
+              orElse: () {},
             );
           },
           child: SingleChildScrollView(
@@ -58,6 +59,20 @@ class CarAddingPage extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  void _showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message, style: Theme.of(context).textTheme.bodyLarge),
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        elevation: 8,
+        behavior: SnackBarBehavior.floating,
       ),
     );
   }

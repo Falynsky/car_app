@@ -30,5 +30,10 @@
   "example": "e.g. {}",
   "map_picker_address": "Address",
   "input_error": "Empty input",
-  "pick" : "Pick"
+  "pick" : "Pick",
+  "unique_error": "Value of {} must be unique",
+  "required_error": "Field {} is required",
+  "unknown_error": "Unknown error occured in {}",
+  "fetch_data_error": "Error while fetching data",
+  "owner_not_found": "Owner not found"
 }

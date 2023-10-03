@@ -46,7 +46,12 @@ class CodegenLoader extends AssetLoader{
   "example": "e.g. {}",
   "map_picker_address": "Address",
   "input_error": "Empty input",
-  "pick": "Pick"
+  "pick": "Pick",
+  "unique_error": "Value of {} must be unique",
+  "required_error": "Field {} is required",
+  "unknown_error": "Unknown error occured in {}",
+  "fetch_data_error": "Error while fetching data",
+  "owner_not_found": "Owner not found"
 };
 static const Map<String,dynamic> pl = {
   "car_list_title": "Samochody",
@@ -80,7 +85,12 @@ static const Map<String,dynamic> pl = {
   "example": "np. {}",
   "map_picker_address": "Adres",
   "input_error": "Uzupełnij pole",
-  "pick": "Wybierz"
+  "pick": "Wybierz",
+  "unique_error": "Wartość {} musi być unikalna",
+  "required_error": "Pole {} jest wymagane",
+  "unknown_error": "Wystąpił nieznany błąd w polu {}",
+  "fetch_data_error": "Wystąpił błąd podczas pobierania danych",
+  "owner_not_found": "Nie znaleziono właściciela"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "pl": pl};
 }

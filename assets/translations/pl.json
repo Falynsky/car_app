@@ -30,5 +30,10 @@
   "example": "np. {}",
   "map_picker_address": "Adres",
   "input_error": "Uzupełnij pole",
-  "pick" : "Wybierz"
+  "pick" : "Wybierz",
+  "unique_error": "Wartość {} musi być unikalna",
+  "required_error": "Pole {} jest wymagane",
+  "unknown_error": "Wystąpił nieznany błąd w polu {}",
+  "fetch_data_error": "Wystąpił błąd podczas pobierania danych",
+  "owner_not_found": "Nie znaleziono właściciela"
 }
