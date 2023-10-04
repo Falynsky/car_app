@@ -2,8 +2,9 @@ import 'package:cars_app/core/data/two_way_mapper.dart';
 import 'package:cars_app/features/car_list/data/dto/car_dto.dart';
 import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:injecteo/injecteo.dart';
+import 'package:mocktail/mocktail.dart';
 
-@inject
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class CarModelMapper implements TwoWayMapper<CarModel, CarDTO> {
   @override
   CarDTO toDTO(CarModel value) {
@@ -35,3 +36,6 @@ class CarModelMapper implements TwoWayMapper<CarModel, CarDTO> {
     );
   }
 }
+
+@LazySingleton(env: <String>[Environment.test])
+class MockCarModelMapper extends Mock implements CarModelMapper {}

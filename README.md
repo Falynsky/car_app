@@ -1,16 +1,18 @@
 # cars_app
 
-A new Flutter project.
+Projekt rekrutacyjny dla firmy ITEO
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Do tej aplikajci został użyty FVM dla fluttera w wersji 3.13.0
 
-A few resources to get you started if this is your first Flutter project:
+Do projektu zostały użyte tłumaczenia z easy_localization, komendy do wygenerowani tłumaczeń
+można znaleźć w katlogu assets
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Co bym zmienił?
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Podczas pisania aplikacji przychodził mi do głowy różne pomysły, które realizowałem lub na które nie miałem czasu z racji pracy i innych obowiązków.
+Jednak chętnie się z nimi podzielę na rozmowie technicznej :).
+
+## Running the tests
+Zostały dodane różnego rodzaju testy, przy większej ilości czasu zostały by dodane testy dla wszystkich klas

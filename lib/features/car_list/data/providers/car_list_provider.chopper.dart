@@ -19,14 +19,10 @@ class _$CarListProvider extends CarListProvider {
   @override
   Future<Response<List<CarDTO>>> getCars() {
     final Uri $url = Uri.parse('/car-list');
-    final Map<String, String> $headers = {
-      'x-apikey': '795ad45e4dc222bc0e5bd1c163bb885e3635e',
-    };
     final Request $request = Request(
       'GET',
       $url,
       client.baseUrl,
-      headers: $headers,
     );
     return client.send<List<CarDTO>, CarDTO>($request);
   }

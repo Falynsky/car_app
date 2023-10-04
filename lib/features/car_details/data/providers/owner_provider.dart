@@ -5,7 +5,7 @@ import 'package:injecteo/injecteo.dart';
 
 part 'owner_provider.chopper.dart';
 
-@LazySingleton(env: <String>[Environment.dev])
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 @ChopperApi()
 abstract class OwnerProvider extends ChopperService {
   @factoryMethod
@@ -13,11 +13,6 @@ abstract class OwnerProvider extends ChopperService {
     return _$OwnerProvider(provider.client);
   }
 
-  @Get(
-    path: '/person-list',
-    headers: <String, String>{
-      'x-apikey': '795ad45e4dc222bc0e5bd1c163bb885e3635e',
-    },
-  )
+  @Get(path: '/person-list')
   Future<Response<List<OwnerDTO>>> getOwners();
 }

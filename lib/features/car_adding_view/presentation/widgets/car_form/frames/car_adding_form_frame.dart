@@ -1,9 +1,9 @@
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/car_adding_additional_info.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/car_adding_basic_info.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/frames/car_adding_color_picker_frame.dart';
-import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/frames/car_adding_map_picker_frame.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/frames/car_adding_owner_picker_frame.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/frames/car_adding_save_button_frame.dart';
+import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/map_picker/car_adding_map_picker_frame.dart';
 import 'package:flutter/material.dart';
 
 class CarAddingFormFrame extends StatefulWidget {

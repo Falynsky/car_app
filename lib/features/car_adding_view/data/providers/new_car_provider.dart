@@ -5,7 +5,7 @@ import 'package:injecteo/injecteo.dart';
 
 part 'new_car_provider.chopper.dart';
 
-@LazySingleton(env: <String>[Environment.dev])
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 @ChopperApi()
 abstract class NewCarProvider extends ChopperService {
   @factoryMethod
@@ -13,11 +13,6 @@ abstract class NewCarProvider extends ChopperService {
     return _$NewCarProvider(provider.client);
   }
 
-  @Post(
-    path: '/car-list',
-    headers: <String, String>{
-      'x-apikey': '795ad45e4dc222bc0e5bd1c163bb885e3635e',
-    },
-  )
+  @Post(path: '/car-list')
   Future<Response<NewCarResponseDTO>> addNewCar(@Body() Map<String, dynamic> car);
 }

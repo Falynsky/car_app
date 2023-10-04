@@ -39,7 +39,6 @@ class CarListPage extends StatelessWidget {
         child: Container(
           child: Column(
             children: <Widget>[
-              const SizedBox(height: 10),
               // Top half
               BlocBuilder<CarListCubit, CarListState>(
                 bloc: carListCubit..fetchCars(),

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:cars_app/core/error/failures.dart';
 import 'package:cars_app/core/error/response_code_recognizer.dart';
 import 'package:cars_app/features/car_adding_view/data/dto/new_car_dto.dart';
@@ -38,8 +36,7 @@ class RemoteNewCarRepository implements NewCarRepository {
       if (response.isSuccessful) {
         return const Right<Failure, bool>(true);
       }
-      final dynamic decodedError = json.decode(response.error as String? ?? '{}');
-      final NewCarResponseDTO value = NewCarResponseDTO.fromJson(decodedError);
+      final NewCarResponseDTO value = response.error as NewCarResponseDTO;
       final NewCarResponseModel model = responseMapper.toModel(value);
       final List<ErrorModel> errors = model.errors ?? <ErrorModel>[];
       if (errors.isNotEmpty) {

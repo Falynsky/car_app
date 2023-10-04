@@ -5,7 +5,7 @@ import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/do
 import 'package:dartz/dartz.dart';
 import 'package:injecteo/injecteo.dart';
 
-@LazySingleton(env: <String>[Environment.dev])
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class GetNewCarOwnersUseCase extends UseCase<List<NewCarOwnerModel>, NoParams> {
   final NewCarOwnerRepository newCarOwnerRepository;
 

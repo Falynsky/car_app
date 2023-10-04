@@ -7,7 +7,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injecteo/injecteo.dart';
 
-@LazySingleton(env: <String>[Environment.dev])
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class NewCarOwnerCubit extends Cubit<NewCarOwnerState> {
   final GetNewCarOwnersUseCase getNewCarOwnersUseCase;
 

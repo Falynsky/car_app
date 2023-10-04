@@ -6,7 +6,7 @@ import 'package:mocktail/mocktail.dart';
 
 part 'car_list_provider.chopper.dart';
 
-@LazySingleton(env: <String>[Environment.dev])
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 @ChopperApi()
 abstract class CarListProvider extends ChopperService {
   @factoryMethod
@@ -14,12 +14,7 @@ abstract class CarListProvider extends ChopperService {
     return _$CarListProvider(provider.client);
   }
 
-  @Get(
-    path: '/car-list',
-    headers: <String, String>{
-      'x-apikey': '795ad45e4dc222bc0e5bd1c163bb885e3635e',
-    },
-  )
+  @Get(path: '/car-list')
   Future<Response<List<CarDTO>>> getCars();
 }
 

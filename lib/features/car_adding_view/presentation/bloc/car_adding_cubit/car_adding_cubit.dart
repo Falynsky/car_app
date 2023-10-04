@@ -7,7 +7,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:injecteo/injecteo.dart';
 
-@LazySingleton(env: <String>[Environment.dev])
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class CarAddingCubit extends Cubit<CarAddingState> {
   final AddNewCarUseCase addNewCarUseCase;
 

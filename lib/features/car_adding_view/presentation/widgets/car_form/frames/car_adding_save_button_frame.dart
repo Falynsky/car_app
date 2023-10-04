@@ -1,8 +1,9 @@
 import 'package:cars_app/core/di/dependencies.dart';
+import 'package:cars_app/core/utils/string_extension.dart';
+import 'package:cars_app/core/widgets/custom_raised_button.dart';
 import 'package:cars_app/features/car_adding_view/domain/models/new_car_model.dart';
 import 'package:cars_app/features/car_adding_view/presentation/bloc/car_adding_cubit/car_adding_cubit.dart';
 import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/frames/car_adding_form_row_frame.dart';
-import 'package:cars_app/features/car_adding_view/presentation/widgets/custom_raised_button.dart';
 import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -47,11 +48,10 @@ class CarAddingSaveButtonFrame extends StatelessWidget {
               registration: registrationController.text,
               color: colorController.text,
               ownerId: ownerIdController.text,
-              lat: double.parse(latController.text),
-              lng: double.parse(lngController.text),
+              lat: latController.text.parseDouble,
+              lng: lngController.text.parseDouble,
             );
             getIt<CarAddingCubit>().registerNewCar(newCar);
-            newCar.model;
           }
         },
         child: const Text(

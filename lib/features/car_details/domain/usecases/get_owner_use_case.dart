@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injecteo/injecteo.dart';
 
-@LazySingleton(env: <String>[Environment.dev])
+@LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class GetOwnerUseCase implements UseCase<OwnerModel, Params> {
   final OwnerRepository repository;
 

@@ -12,13 +12,14 @@ class CarList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int length = cars.length;
     return Expanded(
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
-        itemCount: cars.length,
+        itemCount: length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+            padding: EdgeInsets.fromLTRB(10, index == 0 ? 10 : 0, 10, length - 1 != index ? 10 : 100),
             child: Container(
               child: CarCard(car: cars[index]),
             ),
