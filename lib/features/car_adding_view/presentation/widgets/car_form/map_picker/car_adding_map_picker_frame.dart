@@ -8,14 +8,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarAddingMapPickerFrame extends StatefulWidget {
-  final TextEditingController latController;
-  final TextEditingController lngController;
-
   const CarAddingMapPickerFrame({
     required this.latController,
     required this.lngController,
     super.key,
   });
+
+  final TextEditingController latController;
+  final TextEditingController lngController;
 
   @override
   State<CarAddingMapPickerFrame> createState() => _CarAddingMapPickerFrameState();
@@ -71,7 +71,7 @@ class _CarAddingMapPickerFrameState extends State<CarAddingMapPickerFrame> {
   }
 
   void openMap() {
-    showDialog(
+    showDialog<void>(
       builder: (BuildContext context) {
         return MapDialogPickerFrame(
           latController: widget.latController,

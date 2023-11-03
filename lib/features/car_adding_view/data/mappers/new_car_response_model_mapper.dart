@@ -6,9 +6,9 @@ import 'package:injecteo/injecteo.dart';
 
 @inject
 class NewCarResponseModelMapper implements TwoWayMapper<NewCarResponseModel, NewCarResponseDTO> {
-  final ErrorModelMapper errorModelMapper;
-
   NewCarResponseModelMapper(this.errorModelMapper);
+
+  final ErrorModelMapper errorModelMapper;
 
   @override
   NewCarResponseDTO toDTO(NewCarResponseModel value) {

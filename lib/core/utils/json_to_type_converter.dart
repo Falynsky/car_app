@@ -10,15 +10,15 @@ class JsonToTypeConverter extends JsonConverter {
   const JsonToTypeConverter();
 
   @override
-  FutureOr<Response<BodyType>> convertResponse<BodyType, InnerType>(Response response) async {
+  FutureOr<Response<BodyType>> convertResponse<BodyType, InnerType>(Response<dynamic> response) async {
     final dynamic originalBody = response.body;
-    final BodyType updatedBody = _fromJsonData<BodyType, InnerType>(originalBody);
+    final BodyType updatedBody = _fromJsonData<BodyType, InnerType>(originalBody as String);
     final Response<BodyType> copyWith = response.copyWith(body: updatedBody);
     return Future<Response<BodyType>>.value(copyWith);
   }
 
   T _fromJsonData<T, InnerType>(String jsonData) {
     final jsonMap = json.decode(jsonData);
-    return JsonTypeParser.decode<InnerType>(jsonMap);
+    return JsonTypeParser.decode<InnerType>(jsonMap) as T;
   }
 }

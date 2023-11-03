@@ -3,12 +3,12 @@ import 'package:cars_app/features/car_list/presentation/widgets/car_list/car_car
 import 'package:flutter/material.dart';
 
 class CarList extends StatelessWidget {
-  final List<CarModel> cars;
-
   const CarList({
     required this.cars,
     super.key,
   });
+
+  final List<CarModel> cars;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,7 @@ class CarList extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: EdgeInsets.fromLTRB(10, index == 0 ? 10 : 0, 10, length - 1 != index ? 10 : 100),
-            child: Container(
-              child: CarCard(car: cars[index]),
-            ),
+            child: CarCard(car: cars[index]),
           );
         },
       ),

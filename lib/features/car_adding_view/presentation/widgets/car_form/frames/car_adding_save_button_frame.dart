@@ -9,16 +9,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarAddingSaveButtonFrame extends StatelessWidget {
-  final GlobalKey<FormState> formKey;
-  final TextEditingController brandController;
-  final TextEditingController modelController;
-  final TextEditingController yearController;
-  final TextEditingController registrationController;
-  final TextEditingController colorController;
-  final TextEditingController ownerIdController;
-  final TextEditingController latController;
-  final TextEditingController lngController;
-
   const CarAddingSaveButtonFrame({
     required this.formKey,
     required this.brandController,
@@ -32,13 +22,23 @@ class CarAddingSaveButtonFrame extends StatelessWidget {
     super.key,
   });
 
+  final GlobalKey<FormState> formKey;
+  final TextEditingController brandController;
+  final TextEditingController modelController;
+  final TextEditingController yearController;
+  final TextEditingController registrationController;
+  final TextEditingController colorController;
+  final TextEditingController ownerIdController;
+  final TextEditingController latController;
+  final TextEditingController lngController;
+
   @override
   Widget build(BuildContext context) {
     return CarAddingFormRowFrame(
       isExpanded: false,
       left: CustomRaisedButton(
         padding: const EdgeInsets.symmetric(vertical: 15),
-        onPressed: () {
+        onPressed: () async {
           final bool validate = formKey.currentState?.validate() ?? false;
           if (validate) {
             final NewCarModel newCar = NewCarModel(
@@ -51,7 +51,7 @@ class CarAddingSaveButtonFrame extends StatelessWidget {
               lat: latController.text.parseDouble,
               lng: lngController.text.parseDouble,
             );
-            getIt<CarAddingCubit>().registerNewCar(newCar);
+           await getIt<CarAddingCubit>().registerNewCar(newCar);
           }
         },
         child: const Text(

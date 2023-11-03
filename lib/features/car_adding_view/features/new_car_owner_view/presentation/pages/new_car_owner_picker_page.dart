@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewCarOwnerPickerPage extends StatelessWidget {
-  const NewCarOwnerPickerPage({Key? key}) : super(key: key);
+  const NewCarOwnerPickerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,24 +29,22 @@ class NewCarOwnerPickerPage extends StatelessWidget {
           ),
           title: const Text(LocaleKeys.new_car_pick_owner).tr(),
         ),
-        body: Container(
-          child: Column(
-            children: <Widget>[
-              const SizedBox(height: 10),
-              BlocBuilder<NewCarOwnerCubit, NewCarOwnerState>(
-                bloc: getIt<NewCarOwnerCubit>()..getOwners(),
-                builder: (BuildContext context, NewCarOwnerState state) {
-                  return state.maybeWhen(
-                    orElse: NewCarOwnerPickerFrame.new,
-                    loading: () => const LoadingSpinner(),
-                    success: (List<NewCarOwnerModel> owners) => Expanded(
-                      child: NewCarOwnerPickerFrame(owners: owners),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+        body: Column(
+          children: <Widget>[
+            const SizedBox(height: 10),
+            BlocBuilder<NewCarOwnerCubit, NewCarOwnerState>(
+              bloc: getIt<NewCarOwnerCubit>()..getOwners(),
+              builder: (BuildContext context, NewCarOwnerState state) {
+                return state.maybeWhen(
+                  orElse: NewCarOwnerPickerFrame.new,
+                  loading: () => const LoadingSpinner(),
+                  success: (List<NewCarOwnerModel> owners) => Expanded(
+                    child: NewCarOwnerPickerFrame(owners: owners),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

@@ -5,12 +5,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarDetailsColorBox extends StatelessWidget {
-  final String color;
-
   const CarDetailsColorBox({
     required this.color,
     super.key,
   });
+
+  final String color;
 
   Color get getParsedColor => color.parseToColor;
 

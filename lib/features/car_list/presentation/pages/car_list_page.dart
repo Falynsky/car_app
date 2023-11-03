@@ -36,17 +36,15 @@ class CarListPage extends StatelessWidget {
       body: BlocListener<CarListCubit, CarListState>(
         bloc: carListCubit,
         listener: _listener,
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              // Top half
-              BlocBuilder<CarListCubit, CarListState>(
-                bloc: carListCubit..fetchCars(),
-                builder: _builder,
-              ),
-              // Bottom half
-            ],
-          ),
+        child: Column(
+          children: <Widget>[
+            // Top half
+            BlocBuilder<CarListCubit, CarListState>(
+              bloc: carListCubit..fetchCars(),
+              builder: _builder,
+            ),
+            // Bottom half
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -54,7 +52,7 @@ class CarListPage extends StatelessWidget {
           Navigator.of(context)
               .push(
             PageRouteBuilder<bool>(
-              pageBuilder: (BuildContext context, _, __) => CarAddingPage(),
+              pageBuilder: (BuildContext context, _, __) => const CarAddingPage(),
             ),
           )
               .then((bool? reloadPage) {

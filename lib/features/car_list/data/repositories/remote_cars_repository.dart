@@ -13,13 +13,13 @@ import 'package:mocktail/mocktail.dart';
 
 @LazySingleton(as: CarsRepository, env: <String>[Environment.dev, Environment.prod])
 class RemoteCarsRepository implements CarsRepository {
-  final CarListProvider carListProvider;
-  final CarModelMapper mapper;
-
   RemoteCarsRepository({
     required this.carListProvider,
     required this.mapper,
   });
+
+  final CarListProvider carListProvider;
+  final CarModelMapper mapper;
 
   @override
   Future<Either<Failure, List<CarModel>>> getAllCars() async {

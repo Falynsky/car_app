@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CarAddingFormRowFrame extends StatelessWidget {
-  final Widget left;
-  final bool isExpanded;
-  final Widget? right;
-
   const CarAddingFormRowFrame({
     required this.left,
     this.isExpanded = true,
     this.right,
     super.key,
   });
+
+  final Widget left;
+  final bool isExpanded;
+  final Widget? right;
 
   @override
   Widget build(BuildContext context) {

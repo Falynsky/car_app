@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class CarAddingColorPickerFrame extends StatefulWidget {
-  final TextEditingController colorController;
-
   const CarAddingColorPickerFrame({
     required this.colorController,
     super.key,
   });
+
+  final TextEditingController colorController;
 
   @override
   State<CarAddingColorPickerFrame> createState() => _CarAddingColorPickerFrameState();
@@ -65,7 +65,7 @@ class _CarAddingColorPickerFrameState extends State<CarAddingColorPickerFrame> {
 
   dynamic _openPicker() {
     pickerColor = widget.colorController.text.parseToColor;
-    showDialog(
+    showDialog<void>(
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text(LocaleKeys.new_car_pick_color).tr(),

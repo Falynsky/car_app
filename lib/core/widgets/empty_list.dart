@@ -2,14 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class EmptyList extends StatelessWidget {
-  final String caption;
-  final IconData iconData;
-
   const EmptyList({
     required this.caption,
     required this.iconData,
     super.key,
   });
+
+  final String caption;
+  final IconData iconData;
 
   @override
   Widget build(BuildContext context) {

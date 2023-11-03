@@ -4,12 +4,12 @@ import 'package:cars_app/features/car_list/presentation/widgets/car_list/car_car
 import 'package:flutter/material.dart';
 
 class CarCard extends StatelessWidget {
-  final CarModel car;
-
   const CarCard({
     required this.car,
     super.key,
   });
+
+  final CarModel car;
 
   @override
   Widget build(BuildContext context) {

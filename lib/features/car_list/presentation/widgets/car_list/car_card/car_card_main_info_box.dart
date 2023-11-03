@@ -3,16 +3,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarCardMainInfoBox extends StatelessWidget {
-  final String brand;
-  final String model;
-  final String registration;
-
   const CarCardMainInfoBox({
     required this.brand,
     required this.model,
     required this.registration,
     super.key,
   });
+
+  final String brand;
+  final String model;
+  final String registration;
 
   @override
   Widget build(BuildContext context) {

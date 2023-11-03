@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CarDetailsPage extends StatelessWidget {
-  final CarModel car;
-
   const CarDetailsPage({
     required this.car,
     super.key,
   });
+
+  final CarModel car;
 
   @override
   Widget build(BuildContext context) {
@@ -48,20 +48,18 @@ class CarDetailsPage extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.only(top: 5),
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                BlocBuilder<CarDetailCubit, CarDetailsState>(
-                  bloc: getIt<CarDetailCubit>()..initCarDetail(car.ownerId),
-                  builder: (BuildContext context, CarDetailsState state) {
-                    return state.maybeWhen(
-                      loading: () => const LoadingSpinner(),
-                      orElse: () => CarDetails(car: car),
-                    );
-                  },
-                ),
-              ],
-            ),
+          child: Column(
+            children: <Widget>[
+              BlocBuilder<CarDetailCubit, CarDetailsState>(
+                bloc: getIt<CarDetailCubit>()..initCarDetail(car.ownerId),
+                builder: (BuildContext context, CarDetailsState state) {
+                  return state.maybeWhen(
+                    loading: () => const LoadingSpinner(),
+                    orElse: () => CarDetails(car: car),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),

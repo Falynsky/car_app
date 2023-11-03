@@ -5,12 +5,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarCardColorBox extends StatelessWidget {
-  final String color;
-
   const CarCardColorBox({
     required this.color,
     super.key,
   });
+
+  final String color;
 
   Color get getForegroundColor => getParsedToColor.getForegroundColor;
 
@@ -30,7 +30,7 @@ class CarCardColorBox extends StatelessWidget {
           ).tr(),
         ),
         Chip(
-          padding: const EdgeInsets.all(0),
+          padding: EdgeInsets.zero,
           backgroundColor: getParsedToColor,
           label: SizedBox(
             width: 70,

@@ -5,14 +5,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarDetailsData extends StatelessWidget {
-  final String year;
-  final String registration;
-
   const CarDetailsData({
     required this.year,
     required this.registration,
     super.key,
   });
+
+  final String year;
+  final String registration;
 
   int? get getYear => getParsedDate?.year;
 
@@ -23,7 +23,7 @@ class CarDetailsData extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        CarDetailLabel(label: LocaleKeys.car_details_data),
+        const CarDetailLabel(label: LocaleKeys.car_details_data),
         const Text(LocaleKeys.car_year).tr(
           args: <String>[getStringifyYear],
         ),

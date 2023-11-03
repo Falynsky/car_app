@@ -3,12 +3,12 @@ import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/pr
 import 'package:flutter/material.dart';
 
 class NewCarOwnerPicker extends StatelessWidget {
-  final List<NewCarOwnerModel> owners;
-
   const NewCarOwnerPicker({
     required this.owners,
     super.key,
   });
+
+  final List<NewCarOwnerModel> owners;
 
   @override
   Widget build(BuildContext context) {

@@ -8,9 +8,9 @@ import 'package:mocktail/mocktail.dart';
 
 @LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class GetAllCarsUseCase implements UseCase<List<CarModel>, NoParams> {
-  final CarsRepository repository;
-
   GetAllCarsUseCase(this.repository);
+
+  final CarsRepository repository;
 
   @override
   Future<Either<Failure, List<CarModel>>> call(NoParams params) async {

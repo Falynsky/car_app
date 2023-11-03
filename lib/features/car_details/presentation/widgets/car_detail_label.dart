@@ -2,12 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarDetailLabel extends StatelessWidget {
-  final String label;
-
   const CarDetailLabel({
     required this.label,
     super.key,
   });
+
+  final String label;
 
   @override
   Widget build(BuildContext context) {
