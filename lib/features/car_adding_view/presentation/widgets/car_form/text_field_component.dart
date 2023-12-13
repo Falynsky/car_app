@@ -3,15 +3,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldComponent extends StatelessWidget {
-  final TextEditingController controller;
-  final String placeHolder;
-  final IconData icon;
-  final bool isRequired;
-  final String? label;
-  final bool? obscureText;
-  final RegExp? customRegExp;
-  final String? customErrorMessage;
-
   const TextFieldComponent({
     required this.controller,
     required this.icon,
@@ -21,7 +12,17 @@ class TextFieldComponent extends StatelessWidget {
     this.customRegExp,
     this.obscureText,
     this.customErrorMessage,
+    super.key,
   });
+
+  final TextEditingController controller;
+  final String placeHolder;
+  final IconData icon;
+  final bool isRequired;
+  final String? label;
+  final bool? obscureText;
+  final RegExp? customRegExp;
+  final String? customErrorMessage;
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +62,6 @@ class TextFieldComponent extends StatelessWidget {
     if (value == null) {
       return null;
     }
-
-    // if (isRequired || RegExp(r'(\s)').hasMatch(value)) {
-    //   return LocaleKeys.input_error.tr();
-    // }
 
     if (customRegExp != null && !customRegExp!.hasMatch(value)) {
       return customErrorMessage!;

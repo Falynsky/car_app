@@ -12,13 +12,13 @@ import 'package:injecteo/injecteo.dart';
 
 @LazySingleton(as: OwnerRepository)
 class RemoteOwnersRepository implements OwnerRepository {
-  final OwnerProvider ownerProvider;
-  final OwnerModelMapper mapper;
-
   RemoteOwnersRepository({
     required this.ownerProvider,
     required this.mapper,
   });
+
+  final OwnerProvider ownerProvider;
+  final OwnerModelMapper mapper;
 
   @override
   Future<Either<Failure, OwnerModel>> getOwner(String ownerId) async {

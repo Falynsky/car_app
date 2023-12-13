@@ -8,9 +8,9 @@ import 'package:injecteo/injecteo.dart';
 
 @LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class GetOwnerUseCase implements UseCase<OwnerModel, Params> {
-  final OwnerRepository repository;
-
   GetOwnerUseCase(this.repository);
+
+  final OwnerRepository repository;
 
   @override
   Future<Either<Failure, OwnerModel>> call(Params params) {
@@ -19,9 +19,9 @@ class GetOwnerUseCase implements UseCase<OwnerModel, Params> {
 }
 
 class Params extends Equatable {
-  final String ownerId;
-
   const Params({required this.ownerId});
+
+  final String ownerId;
 
   @override
   List<String> get props => <String>[ownerId];

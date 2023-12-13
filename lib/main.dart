@@ -11,9 +11,9 @@ void main() async {
   await configureDependencies(Environment.dev);
   runApp(
     EasyLocalization(
-      supportedLocales: <Locale>[
-        const Locale('pl'),
-        const Locale('en'),
+      supportedLocales: const <Locale>[
+        Locale('pl'),
+        Locale('en'),
       ],
       path: 'assets/translations',
       assetLoader: const CodegenLoader(),

@@ -8,12 +8,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarAddingOwnerPickerFrame extends StatelessWidget {
-  final TextEditingController ownerIdController;
-
   const CarAddingOwnerPickerFrame({
     required this.ownerIdController,
     super.key,
   });
+
+  final TextEditingController ownerIdController;
 
   @override
   Widget build(BuildContext context) {

@@ -17,15 +17,15 @@ import 'package:injecteo/injecteo.dart';
 
 @LazySingleton(as: NewCarRepository)
 class RemoteNewCarRepository implements NewCarRepository {
-  final NewCarProvider newCarProvider;
-  final NewCarModelMapper mapper;
-  final NewCarResponseModelMapper responseMapper;
-
   RemoteNewCarRepository({
     required this.newCarProvider,
     required this.mapper,
     required this.responseMapper,
   });
+
+  final NewCarProvider newCarProvider;
+  final NewCarModelMapper mapper;
+  final NewCarResponseModelMapper responseMapper;
 
   @override
   Future<Either<Failure, bool>> addNewCar(NewCarModel car) async {
@@ -36,7 +36,8 @@ class RemoteNewCarRepository implements NewCarRepository {
       if (response.isSuccessful) {
         return const Right<Failure, bool>(true);
       }
-      final NewCarResponseDTO value = response.error as NewCarResponseDTO;
+      
+      final NewCarResponseDTO value = response.error! as NewCarResponseDTO;
       final NewCarResponseModel model = responseMapper.toModel(value);
       final List<ErrorModel> errors = model.errors ?? <ErrorModel>[];
       if (errors.isNotEmpty) {

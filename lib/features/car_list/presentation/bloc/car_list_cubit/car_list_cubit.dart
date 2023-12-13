@@ -9,11 +9,11 @@ import 'package:injecteo/injecteo.dart';
 
 @lazySingleton
 class CarListCubit extends Cubit<CarListState> {
-  final GetAllCarsUseCase getAllCarsUseCase;
-
   CarListCubit({
     required this.getAllCarsUseCase,
   }) : super(const CarListState.loading());
+
+  final GetAllCarsUseCase getAllCarsUseCase;
 
   Future<void> fetchCars() async {
     emit(const CarListState.loading());

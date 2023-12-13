@@ -9,9 +9,9 @@ import 'package:latlong2/latlong.dart';
 
 @lazySingleton
 class MapPickerCubit extends Cubit<MapPickerState> {
-  late LatLng lastLatLng;
-
   MapPickerCubit() : super(const MapPickerState.loading());
+
+  late LatLng lastLatLng;
 
   void initMap(LatLng latLng) {
     emit(const MapPickerState.loading());
@@ -24,7 +24,7 @@ class MapPickerCubit extends Cubit<MapPickerState> {
     );
   }
 
-  void updateMap(String text) async {
+  Future<void> updateMap(String text) async {
     emit(const MapPickerState.loading());
     final List<GBSearchData> data = await GeocoderBuddy.query(text);
     if (data.isNotEmpty) {
@@ -39,13 +39,13 @@ class MapPickerCubit extends Cubit<MapPickerState> {
     emit(MapPickerState.success(latLng: lastLatLng, markers: <Marker>[buildMarker(lastLatLng)]));
   }
 
-  void selectPointOnMap(LatLng latLng) async {
+  Future<void> selectPointOnMap(LatLng latLng) async {
     emit(const MapPickerState.loading());
     lastLatLng = latLng;
     emit(MapPickerState.success(latLng: lastLatLng, markers: <Marker>[buildMarker(lastLatLng)]));
   }
 
-  void submitMarker() async {
+  Future<void> submitMarker() async {
     emit(MapPickerState.submit(latLng: lastLatLng));
   }
 
@@ -54,12 +54,10 @@ class MapPickerCubit extends Cubit<MapPickerState> {
       point: latLng,
       width: 80,
       height: 80,
-      builder: (BuildContext context) => Container(
-        child: const Icon(
-          Icons.location_pin,
-          size: 35,
-          color: Colors.pink,
-        ),
+      builder: (BuildContext context) => const Icon(
+        Icons.location_pin,
+        size: 35,
+        color: Colors.pink,
       ),
     );
   }

@@ -8,9 +8,9 @@ import 'package:injecteo/injecteo.dart';
 
 @LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class AddNewCarUseCase implements UseCase<bool, Params> {
-  final NewCarRepository newCarRepository;
-
   AddNewCarUseCase(this.newCarRepository);
+
+  final NewCarRepository newCarRepository;
 
   @override
   Future<Either<Failure, bool>> call(Params params) async {
@@ -19,9 +19,9 @@ class AddNewCarUseCase implements UseCase<bool, Params> {
 }
 
 class Params extends Equatable {
-  final NewCarModel newCarModel;
-
   const Params({required this.newCarModel});
+  
+  final NewCarModel newCarModel;
 
   @override
   List<NewCarModel> get props => <NewCarModel>[newCarModel];

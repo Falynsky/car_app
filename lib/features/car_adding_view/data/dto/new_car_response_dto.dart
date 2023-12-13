@@ -5,11 +5,6 @@ part 'new_car_response_dto.g.dart';
 
 @JsonSerializable()
 class NewCarResponseDTO {
-  final String? message;
-  final String? name;
-  final List<ErrorDTO>? list;
-  final int? status;
-
   const NewCarResponseDTO({
     this.message,
     this.name,
@@ -18,6 +13,10 @@ class NewCarResponseDTO {
   });
 
   factory NewCarResponseDTO.fromJson(Map<String, Object?> json) => _$NewCarResponseDTOFromJson(json);
+  final String? message;
+  final String? name;
+  final List<ErrorDTO>? list;
+  final int? status;
 
   Map<String, Object?> toJson() => _$NewCarResponseDTOToJson(this);
 }

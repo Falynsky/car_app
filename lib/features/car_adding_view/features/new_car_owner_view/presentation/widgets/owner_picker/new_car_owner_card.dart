@@ -2,12 +2,12 @@ import 'package:cars_app/features/car_adding_view/features/new_car_owner_view/do
 import 'package:flutter/material.dart';
 
 class NewCarOwnerCard extends StatelessWidget {
-  final NewCarOwnerModel owner;
-
   const NewCarOwnerCard({
     required this.owner,
     super.key,
   });
+
+  final NewCarOwnerModel owner;
 
   @override
   Widget build(BuildContext context) {

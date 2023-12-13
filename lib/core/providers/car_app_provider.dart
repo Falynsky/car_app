@@ -12,7 +12,7 @@ abstract class CarAppProvider extends ChopperService {
   @factoryMethod
   static CarAppProvider create() {
     final ChopperClient client = ChopperClient(
-      baseUrl: Uri.parse(HttpConsts.BASE_URL),
+      baseUrl: Uri.parse(HttpConsts.baseUrl),
       services: <ChopperService>[
         _$CarAppProvider(),
       ],

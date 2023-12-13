@@ -12,13 +12,13 @@ import 'package:injecteo/injecteo.dart';
 
 @LazySingleton(as: NewCarOwnerRepository)
 class RemoteNewCarOwnersRepository implements NewCarOwnerRepository {
-  final NewCarOwnerProvider ownerProvider;
-  final NewCarOwnerModelMapper mapper;
-
   RemoteNewCarOwnersRepository({
     required this.ownerProvider,
     required this.mapper,
   });
+
+  final NewCarOwnerProvider ownerProvider;
+  final NewCarOwnerModelMapper mapper;
 
   @override
   Future<Either<Failure, List<NewCarOwnerModel>>> getOwners() async {

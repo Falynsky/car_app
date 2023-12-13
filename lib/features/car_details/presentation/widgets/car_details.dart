@@ -6,30 +6,28 @@ import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class CarDetails extends StatelessWidget {
-  final CarModel car;
-
   const CarDetails({
     required this.car,
     super.key,
   });
 
+  final CarModel car;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              CarDetailLabel(label: LocaleKeys.car_localization),
-              CarLocalizationBox(
-                lat: car.lat,
-                lng: car.lng,
-              ),
-              CarDetailInfoFrame(car: car),
-            ],
-          ),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const CarDetailLabel(label: LocaleKeys.car_localization),
+            CarLocalizationBox(
+              lat: car.lat,
+              lng: car.lng,
+            ),
+            CarDetailInfoFrame(car: car),
+          ],
         ),
       ),
     );

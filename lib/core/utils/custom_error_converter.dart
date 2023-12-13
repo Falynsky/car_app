@@ -8,14 +8,14 @@ import 'package:injecteo/injecteo.dart';
 @lazySingleton
 class CustomErrorConverter extends ErrorConverter {
   @override
-  FutureOr<Response> convertError<BodyType, InnerType>(Response response) {
+  FutureOr<Response<dynamic>> convertError<BodyType, InnerType>(Response<dynamic> response) {
     final dynamic error = response.body;
-    final BodyType updatedBody = _fromJsonData<BodyType, InnerType>(error);
+    final BodyType updatedBody = _fromJsonData<BodyType, InnerType>(error as String) as BodyType;
     final Response<BodyType> copyWith = response.copyWith(body: updatedBody);
-    return Future<Response>.value(copyWith);
+    return Future<Response<dynamic>>.value(copyWith);
   }
 
-  T _fromJsonData<T, InnerType>(String jsonData) {
+  dynamic _fromJsonData<T, InnerType>(String jsonData) {
     final jsonMap = json.decode(jsonData);
     return JsonTypeParser.decode<InnerType>(jsonMap);
   }

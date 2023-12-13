@@ -217,14 +217,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: caac504f942f41dfadcf45229ce8c47065b93919a12739f20d6173a883c5ec73
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.2"
   dart_style:
     dependency: transitive
     description:
@@ -525,6 +517,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.8.0"
+  linteo:
+    dependency: "direct main"
+    description:
+      name: linteo
+      sha256: ee1a2802c3b51e3f313eb48312d850baf4bdf86f7ccc5d99badb89e9017f5f3c
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   lints:
     dependency: transitive
     description:

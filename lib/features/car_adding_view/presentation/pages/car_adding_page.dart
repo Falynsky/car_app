@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CarAddingPage extends StatelessWidget {
+  const CarAddingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -45,15 +47,13 @@ class CarAddingPage extends StatelessWidget {
               success: () => Navigator.of(context).pop(true),
             );
           },
-          child: SingleChildScrollView(
+          child: const SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.only(top: 5),
-              child: Container(
-                child: Column(
-                  children: <Widget>[
-                    CarAddingFormFrame(),
-                  ],
-                ),
+              padding: EdgeInsets.only(top: 5),
+              child: Column(
+                children: <Widget>[
+                  CarAddingFormFrame(),
+                ],
               ),
             ),
           ),

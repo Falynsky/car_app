@@ -7,6 +7,8 @@ import 'package:cars_app/features/car_adding_view/presentation/widgets/car_form/
 import 'package:flutter/material.dart';
 
 class CarAddingFormFrame extends StatefulWidget {
+  const CarAddingFormFrame({super.key});
+
   @override
   State<CarAddingFormFrame> createState() => _CarAddingFormFrameState();
 }

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CustomRaisedButton extends StatelessWidget {
-  final EdgeInsets? padding;
-  final Widget child;
-  final VoidCallback? onPressed;
-
   const CustomRaisedButton({
     required this.child,
+    super.key,
     this.padding,
     this.onPressed,
   });
+
+  final EdgeInsets? padding;
+  final Widget child;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {

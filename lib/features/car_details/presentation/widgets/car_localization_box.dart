@@ -3,14 +3,14 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class CarLocalizationBox extends StatelessWidget {
-  final double lat;
-  final double lng;
-
   const CarLocalizationBox({
     required this.lat,
     required this.lng,
     super.key,
   });
+
+  final double lat;
+  final double lng;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +36,10 @@ class CarLocalizationBox extends StatelessWidget {
                     point: LatLng(lat, lng),
                     width: 80,
                     height: 80,
-                    builder: (BuildContext context) => Container(
-                      child: const Icon(
-                        Icons.location_pin,
-                        size: 35,
-                        color: Colors.pink,
-                      ),
+                    builder: (BuildContext context) => const Icon(
+                      Icons.location_pin,
+                      size: 35,
+                      color: Colors.pink,
                     ),
                   ),
                 ],

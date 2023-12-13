@@ -3,12 +3,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarCardRegistrationBox extends StatelessWidget {
-  final String registration;
-
   const CarCardRegistrationBox({
     required this.registration,
     super.key,
   });
+
+  final String registration;
 
   @override
   Widget build(BuildContext context) {

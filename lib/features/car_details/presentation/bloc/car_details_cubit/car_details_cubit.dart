@@ -8,13 +8,13 @@ import 'package:injecteo/injecteo.dart';
 
 @lazySingleton
 class CarDetailCubit extends Cubit<CarDetailsState> {
-  final GetOwnerUseCase getOwnerUseCase;
-
   CarDetailCubit({
     required this.getOwnerUseCase,
   }) : super(const CarDetailsState.loading());
 
-  void initCarDetail(String ownerId) async {
+  final GetOwnerUseCase getOwnerUseCase;
+
+  Future<void> initCarDetail(String ownerId) async {
     emit(const CarDetailsState.loading());
     final Either<Failure, OwnerModel> either = await getOwnerUseCase(Params(ownerId: ownerId));
     either.fold(

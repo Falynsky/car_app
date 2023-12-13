@@ -5,14 +5,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CarAddingAdditionalInfo extends StatelessWidget {
-  final TextEditingController yearController;
-  final TextEditingController registrationController;
-
   const CarAddingAdditionalInfo({
     required this.yearController,
     required this.registrationController,
     super.key,
   });
+
+  final TextEditingController yearController;
+  final TextEditingController registrationController;
 
   @override
   Widget build(BuildContext context) {

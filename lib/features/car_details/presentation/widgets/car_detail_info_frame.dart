@@ -5,12 +5,12 @@ import 'package:cars_app/features/car_list/domain/models/car_model.dart';
 import 'package:flutter/material.dart';
 
 class CarDetailInfoFrame extends StatelessWidget {
-  final CarModel car;
-
   const CarDetailInfoFrame({
     required this.car,
     super.key,
   });
+
+  final CarModel car;
 
   @override
   Widget build(BuildContext context) {

@@ -5,12 +5,12 @@ import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class CarListFrame extends StatelessWidget {
-  final List<CarModel> cars;
-
   CarListFrame({
     List<CarModel>? cars,
     super.key,
   }) : cars = cars ?? <CarModel>[];
+
+  final List<CarModel> cars;
 
   @override
   Widget build(BuildContext context) {

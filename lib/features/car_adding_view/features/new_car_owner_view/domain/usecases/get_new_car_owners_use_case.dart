@@ -7,9 +7,9 @@ import 'package:injecteo/injecteo.dart';
 
 @LazySingleton(env: <String>[Environment.dev, Environment.prod])
 class GetNewCarOwnersUseCase extends UseCase<List<NewCarOwnerModel>, NoParams> {
-  final NewCarOwnerRepository newCarOwnerRepository;
-
   GetNewCarOwnersUseCase(this.newCarOwnerRepository);
+
+  final NewCarOwnerRepository newCarOwnerRepository;
 
   @override
   Future<Either<Failure, List<NewCarOwnerModel>>> call(NoParams params) {

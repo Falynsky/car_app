@@ -5,12 +5,12 @@ import 'package:cars_app/translations/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class NewCarOwnerPickerFrame extends StatelessWidget {
-  final List<NewCarOwnerModel> owners;
-
   NewCarOwnerPickerFrame({
     List<NewCarOwnerModel>? owners,
     super.key,
   }) : owners = owners ?? <NewCarOwnerModel>[];
+
+  final List<NewCarOwnerModel> owners;
 
   @override
   Widget build(BuildContext context) {
