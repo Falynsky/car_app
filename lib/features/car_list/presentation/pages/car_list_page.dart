@@ -70,8 +70,7 @@ class CarListPage extends StatelessWidget {
   }
 
   void _listener(BuildContext context, CarListState state) {
-    state.maybeWhen(
-      orElse: () {},
+    state.whenOrNull(
       failure: (String message) => _showSnackBar(context, message),
     );
   }

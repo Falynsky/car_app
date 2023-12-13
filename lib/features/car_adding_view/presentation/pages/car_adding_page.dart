@@ -40,10 +40,9 @@ class CarAddingPage extends StatelessWidget {
         body: BlocListener<CarAddingCubit, CarAddingState>(
           bloc: getIt<CarAddingCubit>(),
           listener: (BuildContext context, CarAddingState state) {
-            state.maybeWhen(
+            state.whenOrNull(
               error: (_, String message) => _showSnackBar(context, message),
               success: () => Navigator.of(context).pop(true),
-              orElse: () {},
             );
           },
           child: SingleChildScrollView(

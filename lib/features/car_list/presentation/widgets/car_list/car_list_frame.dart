@@ -17,6 +17,7 @@ class CarListFrame extends StatelessWidget {
     if (cars.isNotEmpty) {
       return CarList(cars: cars);
     }
+
     return const EmptyList(
       caption: LocaleKeys.car_list_empty,
       iconData: Icons.directions_car,
