@@ -74,7 +74,7 @@ class _CarAddingColorPickerFrameState extends State<CarAddingColorPickerFrame> {
               enableAlpha: false,
               pickerColor: pickerColor,
               onColorChanged: changeColor,
-              labelTypes: <ColorLabelType>[],
+              labelTypes: const <ColorLabelType>[],
             ),
           ),
           actions: <Widget>[

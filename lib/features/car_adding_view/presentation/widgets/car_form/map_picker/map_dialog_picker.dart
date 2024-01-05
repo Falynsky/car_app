@@ -8,9 +8,6 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapDialogPicker extends StatelessWidget {
-  final List<Marker> markers;
-  final LatLng latLng;
-  final TextEditingController pickPlaceController;
 
   const MapDialogPicker({
     required this.markers,
@@ -18,6 +15,10 @@ class MapDialogPicker extends StatelessWidget {
     required this.pickPlaceController,
     super.key,
   });
+  
+  final List<Marker> markers;
+  final LatLng latLng;
+  final TextEditingController pickPlaceController;
 
   @override
   Widget build(BuildContext context) {

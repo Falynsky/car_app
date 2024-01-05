@@ -22,17 +22,19 @@ void main() async {
   setUpAll(() async {
     carListProvider = getIt();
     mapper = CarModelMapper();
-    registerFallbackValue(const CarDTO(
-      id: 'id',
-      registration: 'registration',
-      brand: 'brand',
-      model: 'model',
-      color: 'color',
-      year: '2005-01-01T00:00:00.000Z',
-      ownerId: 'ownerId',
-      lat: 0,
-      lng: 0,
-    ));
+    registerFallbackValue(
+      const CarDTO(
+        id: 'id',
+        registration: 'registration',
+        brand: 'brand',
+        model: 'model',
+        color: 'color',
+        year: '2005-01-01T00:00:00.000Z',
+        ownerId: 'ownerId',
+        lat: 0,
+        lng: 0,
+      ),
+    );
     cars = <CarDTO>[
       const CarDTO(
         id: 'id',
@@ -58,7 +60,7 @@ void main() async {
         ownerId: 'ownerId',
         lat: 0,
         lng: 0,
-      )
+      ),
     ];
     carsRepository = RemoteCarsRepository(carListProvider: carListProvider, mapper: mapper);
   });

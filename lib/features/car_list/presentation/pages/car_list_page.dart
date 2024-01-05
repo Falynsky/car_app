@@ -56,7 +56,7 @@ class CarListPage extends StatelessWidget {
             ),
           )
               .then((bool? reloadPage) {
-            if (reloadPage != null && reloadPage == true) {
+            if (reloadPage != null && reloadPage) {
               carListCubit.fetchCars();
             }
           });

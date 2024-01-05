@@ -12,14 +12,15 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapDialogPickerFrame extends StatefulWidget {
-  final TextEditingController latController;
-  final TextEditingController lngController;
 
   const MapDialogPickerFrame({
     required this.latController,
     required this.lngController,
     super.key,
   });
+  
+  final TextEditingController latController;
+  final TextEditingController lngController;
 
   @override
   State<MapDialogPickerFrame> createState() => _MapDialogPickerFrameState();
