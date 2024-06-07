@@ -1,18 +1,13 @@
 # cars_app
-
-Projekt rekrutacyjny dla firmy ITEO
+Recruitment project for a Flutter developer
 
 ## Getting Started
+This application uses FVM for Flutter version 3.13.0.
 
-Do tej aplikajci został użyty FVM dla fluttera w wersji 3.13.0
+## The project uses translations from easy_localization. Commands to generate translations can be found in the assets directory.
 
-Do projektu zostały użyte tłumaczenia z easy_localization, komendy do wygenerowani tłumaczeń
-można znaleźć w katlogu assets
-
-## Co bym zmienił?
-
-Podczas pisania aplikacji przychodził mi do głowy różne pomysły, które realizowałem lub na które nie miałem czasu z racji pracy i innych obowiązków.
-Jednak chętnie się z nimi podzielę na rozmowie technicznej :).
+## What would I change?
+While writing the application, various ideas came to mind that I implemented or didn't have time for due to work and other commitments. However, I am happy to share them in a technical interview :).
 
 ## Running the tests
-Zostały dodane różnego rodzaju testy, przy większej ilości czasu zostały by dodane testy dla wszystkich klas
+Various tests have been added. With more time, tests for all classes would be included.
